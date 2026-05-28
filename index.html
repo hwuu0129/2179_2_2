@@ -61,6 +61,7 @@
   vegaEmbed("#aus_bubble_map", "json/dot_plot_aus.json").then(function(result) {
   }).catch(console.error);
 </script>
+  
 <div id="australia_yearly_line"></div>
 <script>
   vegaEmbed("#australia_yearly_line", "json/aus_trend.json");
@@ -69,6 +70,10 @@
   <div id="australia_daily_line"></div>
 <script>
   vegaEmbed("#australia_daily_line", "json/australia_fire_daily_trend.json");
+</script>
+  <div id="global_yearly_line"></div>
+<script>
+  vegaEmbed("#global_yearly_line", "json/global_trend.json");
 </script>
   
 </body>
