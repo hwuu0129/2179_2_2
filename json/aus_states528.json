@@ -8,14 +8,14 @@
   "height": 400,
   "projection": {"type": "mercator"},
   "data": {
-    "url": "data/aus_states528.geojson",
+    "url": "data/Australian_states.geojson",
     "format": {"type": "json", "property": "features"}
   },
   "transform": [
     {
       "lookup": "properties.STATE_NAME",
       "from": {
-        "data": {"url": "data/australia_fire_by_state.csv"},
+        "data": {"url": "data/aus_states528.csv"},
         "key": "STATE_NAME",
         "fields": ["fire_count", "avg_frp"]
       }
