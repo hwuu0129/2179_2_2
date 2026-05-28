@@ -12,7 +12,7 @@
     "scale": 700
   },
   "data": {
-    "url": "data/australia_states.geojson",
+    "url": "https://hwuu0129.github.io/2179_2_2/data/australia_states.geojson",
     "format": {
       "type": "json",
       "property": "features"
@@ -23,7 +23,7 @@
       "lookup": "properties.STATE_NAME",
       "from": {
         "data": {
-          "url": "data/aus_states528.csv",
+          "url": "https://hwuu0129.github.io/2179_2_2/data/aus_states528.csv",
           "format": {"type": "csv"}
         },
         "key": "STATE_NAME",
@@ -71,8 +71,7 @@
       {
         "field": "avg_frp_num",
         "type": "quantitative",
-        "title": "Avg FRP (MW)",
-        "format": ".1f"
+        "title": "Avg FRP"
       },
       {
         "field": "grid_cells_num",
