@@ -1,46 +1,96 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global Bushfire Activity",
-  "width": 1000,
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Global Active Fire Detections by Country (2014–2024)",
+    "subtitle": "Total fire detections aggregated from NASA FIRMS gridded data"
+  },
+  "width": 900,
   "height": 500,
-  "projection": {"type": "equalEarth"},
+  "projection": {
+    "type": "equalEarth"
+  },
   "layer": [
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
       },
-      "mark": {"type": "geoshape", "fill": "#e6e6e6", "stroke": "white"}
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eeeeee",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      }
     },
     {
-      "data": {"url": "data/Global_fire.csv", "format": {"type": "csv"}},
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
       "transform": [
-        {"calculate": "toNumber(datum.longitude)", "as": "longitude_num"},
-        {"calculate": "toNumber(datum.latitude)", "as": "latitude_num"},
         {
-          "filter": "isValid(datum.longitude_num) && isValid(datum.latitude_num)"
+          "lookup": "id",
+          "from": {
+            "data": {
+              "url": "data/country_fire_2014_2024_for_map.csv"
+            },
+            "key": "id",
+            "fields": ["country", "iso_a3", "total_fire_count", "avg_frp"]
+          }
+        },
+        {
+          "filter": "isValid(datum.total_fire_count)"
         }
       ],
       "mark": {
-        "type": "circle",
-        "color": "#D95F02",
-        "opacity": 0.6,
-        "size": 30
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 0.5
       },
       "encoding": {
-        "longitude": {"field": "longitude_num", "type": "quantitative"},
-        "latitude": {"field": "latitude_num", "type": "quantitative"},
-        "tooltip": [
-          {"field": "latitude", "type": "nominal", "title": "Latitude"},
-          {"field": "longitude", "type": "nominal", "title": "Longitude"},
-          {
-            "field": "frp",
-            "type": "quantitative",
-            "title": "Fire Radiative Power"
+        "color": {
+          "field": "total_fire_count",
+          "type": "quantitative",
+          "title": "Fire detections",
+          "scale": {
+            "scheme": "orangered"
           },
-          {"field": "acq_date", "type": "nominal", "title": "Date"}
+          "legend": {
+            "format": "~s"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "iso_a3",
+            "title": "ISO code"
+          },
+          {
+            "field": "total_fire_count",
+            "title": "Fire detections",
+            "format": ","
+          },
+          {
+            "field": "avg_frp",
+            "title": "Average FRP",
+            "format": ".2f"
+          }
         ]
       }
     }
-  ]
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }
