@@ -13,34 +13,18 @@
   },
   "data": {
     "url": "https://hwuu0129.github.io/2179_2_2/data/australia_states.geojson",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
+    "format": {"type": "json", "property": "features"}
   },
   "transform": [
     {
       "lookup": "properties.STATE_NAME",
       "from": {
         "data": {
-          "url": "https://hwuu0129.github.io/2179_2_2/data/aus_states528.csv",
-          "format": {"type": "csv"}
+          "url": "https://hwuu0129.github.io/2179_2_2/data/aus_states528.csv"
         },
         "key": "STATE_NAME",
         "fields": ["total_fire", "avg_frp", "grid_cells"]
       }
-    },
-    {
-      "calculate": "toNumber(datum.total_fire)",
-      "as": "total_fire_num"
-    },
-    {
-      "calculate": "toNumber(datum.avg_frp)",
-      "as": "avg_frp_num"
-    },
-    {
-      "calculate": "toNumber(datum.grid_cells)",
-      "as": "grid_cells_num"
     }
   ],
   "mark": {
@@ -50,34 +34,16 @@
   },
   "encoding": {
     "color": {
-      "field": "total_fire_num",
+      "field": "total_fire",
       "type": "quantitative",
-      "scale": {
-        "scheme": "orangered"
-      },
+      "scale": {"scheme": "orangered"},
       "title": "Fire Detections"
     },
     "tooltip": [
-      {
-        "field": "properties.STATE_NAME",
-        "type": "nominal",
-        "title": "State"
-      },
-      {
-        "field": "total_fire_num",
-        "type": "quantitative",
-        "title": "Fire Count"
-      },
-      {
-        "field": "avg_frp_num",
-        "type": "quantitative",
-        "title": "Avg FRP"
-      },
-      {
-        "field": "grid_cells_num",
-        "type": "quantitative",
-        "title": "Grid Cells"
-      }
+      {"field": "properties.STATE_NAME", "type": "nominal",      "title": "State"},
+      {"field": "total_fire",            "type": "quantitative", "title": "Fire Count", "format": ","},
+      {"field": "avg_frp",               "type": "quantitative", "title": "Avg FRP"},
+      {"field": "grid_cells",            "type": "quantitative", "title": "Grid Cells"}
     ]
   }
 }
