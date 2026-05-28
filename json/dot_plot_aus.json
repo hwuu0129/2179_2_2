@@ -1,45 +1,86 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Fire Intensity Across Australia",
+  "title": {
+    "text": "Fire Intensity Across Australia",
+    "subtitle": "Bubble size shows fire detections; colour shows average FRP, 2024"
+  },
   "width": 800,
   "height": 500,
-  "projection": {"type": "mercator"},
+  "projection": {
+    "type": "mercator",
+    "center": [134, -28],
+    "scale": 700
+  },
   "layer": [
     {
       "data": {
         "url": "data/australia_states.geojson",
-        "format": {"type": "json", "property": "features"}
+        "format": {
+          "type": "geojson"
+        }
       },
-      "mark": {"type": "geoshape", "fill": "#eeeeee", "stroke": "white"}
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eeeeee",
+        "stroke": "white"
+      }
     },
     {
-      "data": {"url": "data/australia_2024.csv"},
-      "mark": {"type": "circle", "opacity": 0.65},
+      "data": {
+        "url": "data/australia_2024.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.65,
+        "stroke": "white",
+        "strokeWidth": 0.4
+      },
       "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
+        "longitude": {
+          "field": "lon_bin",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat_bin",
+          "type": "quantitative"
+        },
         "size": {
-          "field": "frp",
+          "field": "fire_count",
           "type": "quantitative",
-          "title": "Fire Radiative Power",
-          "scale": {"range": [10, 800]}
+          "title": "Fire Detections",
+          "scale": {
+            "range": [10, 1200]
+          }
         },
         "color": {
-          "field": "frp",
+          "field": "avg_frp",
           "type": "quantitative",
-          "title": "Fire Intensity",
-          "scale": {"scheme": "reds"}
+          "title": "Average FRP",
+          "scale": {
+            "scheme": "reds"
+          }
         },
         "tooltip": [
-          {"field": "latitude", "type": "quantitative"},
-          {"field": "longitude", "type": "quantitative"},
           {
-            "field": "frp",
+            "field": "lat_bin",
             "type": "quantitative",
-            "title": "Fire Radiative Power"
+            "title": "Latitude"
           },
-          {"field": "acq_date", "type": "nominal", "title": "Date"},
-          {"field": "confidence", "type": "nominal", "title": "Confidence"}
+          {
+            "field": "lon_bin",
+            "type": "quantitative",
+            "title": "Longitude"
+          },
+          {
+            "field": "fire_count",
+            "type": "quantitative",
+            "title": "Fire detections"
+          },
+          {
+            "field": "avg_frp",
+            "type": "quantitative",
+            "title": "Average FRP"
+          }
         ]
       }
     }
