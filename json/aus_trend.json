@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Australia fire detections over time.",
   "data": {
-    "url": "data/australia_fire_2020_2024.csv"
+    "url": "data/australia_yearly_fire_2020_2024.csv"
   },
   "transform": [
     {
