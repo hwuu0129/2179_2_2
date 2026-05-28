@@ -71,10 +71,22 @@
 <script>
   vegaEmbed("#australia_daily_line", "json/australia_fire_daily_trend.json");
 </script>
-  <div id="global_yearly_line"></div>
+ <h2>Global Fire Detections Over Time (2014–2024)</h2>
+
+<p>
+  This line chart shows the annual trend of active fire detections globally from
+  2014 to 2024. Global fire detections peaked in 2023, while 2022 and 2024 were
+  lower than several earlier years in the dataset.
+</p>
+
+<div id="global_yearly_line_2014_2024"></div>
+
 <script>
-  vegaEmbed("#global_yearly_line", "json/global_trend.json");
+  vegaEmbed("#global_yearly_line_2014_2024", "json/global_yearly_line_2014_2024.json")
+    .then(function(result) {
+      console.log("Global yearly line chart loaded");
+    })
+    .catch(console.error);
 </script>
-  
 </body>
 </html>
