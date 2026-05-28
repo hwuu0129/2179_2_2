@@ -47,5 +47,21 @@
   vegaEmbed("#aus_states_map", "json/aus_states528.json")
     .catch(error => console.error(error));
 </script>
+
+  <h2>Fire Intensity Across Australia</h2>
+
+<p>
+  This bubble map shows bushfire activity across Australia in 2024.
+  The size of each bubble represents the number of fire detections, while the colour represents average fire intensity.
+</p>
+
+<div id="aus_bubble_map"></div>
+
+<script>
+  vegaEmbed("#aus_bubble_map", "json/dot_plot_aus.json").then(function(result) {
+  }).catch(console.error);
+</script>
+
+  
 </body>
 </html>
