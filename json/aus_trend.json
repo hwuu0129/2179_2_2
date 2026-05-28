@@ -1,24 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "description": "Australia fire detections over time.",
+  "title": {
+    "text": "Australia Fire Detections Over Time (2020–2024)",
+    "subtitle": "Total active fire detections aggregated from NASA FIRMS gridded data"
+  },
+  "width": 650,
+  "height": 350,
   "data": {
     "url": "data/australia_yearly_fire_2020_2024.csv"
   },
-  "transform": [
-    {
-      "aggregate": [
-        {
-          "op": "sum",
-          "field": "fire_count",
-          "as": "total_fire_count"
-        }
-      ],
-      "groupby": ["year"]
-    }
-  ],
   "mark": {
     "type": "line",
-    "point": true
+    "point": true,
+    "strokeWidth": 3
   },
   "encoding": {
     "x": {
@@ -29,7 +23,10 @@
     "y": {
       "field": "total_fire_count",
       "type": "quantitative",
-      "title": "Fire detections"
+      "title": "Fire detections",
+      "axis": {
+        "format": "~s"
+      }
     },
     "tooltip": [
       {
@@ -40,6 +37,15 @@
         "field": "total_fire_count",
         "title": "Fire detections",
         "format": ","
+      },
+      {
+        "field": "avg_frp",
+        "title": "Average FRP",
+        "format": ".2f"
+      },
+      {
+        "field": "grid_cells",
+        "title": "Grid cells"
       }
     ]
   }
