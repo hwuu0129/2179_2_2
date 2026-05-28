@@ -23,5 +23,15 @@
       .catch(error => console.error(error));
   </script>
 
+  <h2>Top 20 Countries by Bushfire Activity</h2>
+<p>
+  This bar chart shows the top 20 countries with the highest number of high-confidence fire detections.
+</p>
+
+<div id="global_fire_by_country"></div>
+
+<script>
+  vegaEmbed("#global_fire_by_country", "json/global_fire_by_country.json");
+</script>
 </body>
 </html>
