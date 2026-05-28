@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Australia fire detections over time.",
+  "data": {
+    "url": "data/australia_fire_2020_2024.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "fire_count",
+          "as": "total_fire_count"
+        }
+      ],
+      "groupby": ["year"]
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "total_fire_count",
+      "type": "quantitative",
+      "title": "Fire detections"
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "title": "Year"
+      },
+      {
+        "field": "total_fire_count",
+        "title": "Fire detections",
+        "format": ","
+      }
+    ]
+  }
+}
