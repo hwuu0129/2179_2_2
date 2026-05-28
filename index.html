@@ -105,5 +105,19 @@
     })
     .catch(console.error);
 </script>
+  <h2>Change in Fire Detections by Country (2014 vs 2024)</h2>
+
+<p>
+  This dumbbell chart compares active fire detections in 2014 and 2024 for the
+  countries with the largest changes. The distance between the two points shows
+  how much fire activity changed over the decade.
+</p>
+
+<div id="country_dumbbell_2014_2024"></div>
+
+<script>
+  vegaEmbed("#country_dumbbell_2014_2024", "json/country_dumbbell_2014_2024.json")
+    .catch(console.error);
+</script>
 </body>
 </html>
