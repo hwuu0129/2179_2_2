@@ -3,81 +3,43 @@
   "title": "Fire Intensity Across Australia",
   "width": 800,
   "height": 500,
-  "projection": {
-    "type": "mercator",
-    "center": [134, -28],
-    "scale": 750
-  },
+  "projection": {"type": "mercator"},
   "layer": [
     {
       "data": {
         "url": "data/australia_states.geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
+        "format": {"type": "json", "property": "features"}
       },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#eeeeee",
-        "stroke": "white",
-        "strokeWidth": 1
-      }
+      "mark": {"type": "geoshape", "fill": "#eeeeee", "stroke": "white"}
     },
     {
-      "data": {
-        "url": "data/australia_2024.csv"
-      },
-      "mark": {
-        "type": "circle",
-        "opacity": 0.65
-      },
+      "data": {"url": "data/fire.csv"},
+      "mark": {"type": "circle", "opacity": 0.65},
       "encoding": {
-        "longitude": {
-          "field": "lon_bin",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat_bin",
-          "type": "quantitative"
-        },
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {
-          "field": "fire_count",
+          "field": "frp",
           "type": "quantitative",
-          "title": "Fire Count",
-          "scale": {
-            "range": [20, 1200]
-          }
+          "title": "Fire Radiative Power",
+          "scale": {"range": [10, 800]}
         },
         "color": {
-          "field": "avg_frp",
+          "field": "frp",
           "type": "quantitative",
-          "title": "Average Fire Intensity",
-          "scale": {
-            "scheme": "reds"
-          }
+          "title": "Fire Intensity",
+          "scale": {"scheme": "reds"}
         },
         "tooltip": [
+          {"field": "latitude", "type": "quantitative"},
+          {"field": "longitude", "type": "quantitative"},
           {
-            "field": "lat_bin",
+            "field": "frp",
             "type": "quantitative",
-            "title": "Latitude"
+            "title": "Fire Radiative Power"
           },
-          {
-            "field": "lon_bin",
-            "type": "quantitative",
-            "title": "Longitude"
-          },
-          {
-            "field": "fire_count",
-            "type": "quantitative",
-            "title": "Fire Count"
-          },
-          {
-            "field": "avg_frp",
-            "type": "quantitative",
-            "title": "Average FRP"
-          }
+          {"field": "acq_date", "type": "nominal", "title": "Date"},
+          {"field": "confidence", "type": "nominal", "title": "Confidence"}
         ]
       }
     }
