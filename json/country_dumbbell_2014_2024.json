@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Change in Fire Detections by Country (2014 vs 2024)",
+    "subtitle": "Top 10 countries with the largest absolute change"
+  },
+  "width": 720,
+  "height": 420,
+  "data": {
+    "url": "data/country_dumbbell_2014_2024.csv"
+  },
+  "transform": [
+    {
+      "fold": ["fire_2014", "fire_2024"],
+      "as": ["year_type", "fire_count"]
+    },
+    {
+      "calculate": "datum.year_type === 'fire_2014' ? '2014' : '2024'",
+      "as": "year_label"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#bdbdbd"
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "-x",
+          "title": "Country"
+        },
+        "x": {
+          "field": "fire_2014",
+          "type": "quantitative",
+          "title": "Fire detections",
+          "axis": {
+            "format": "~s"
+          }
+        },
+        "x2": {
+          "field": "fire_2024"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 90
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "fire_count",
+          "type": "quantitative",
+          "axis": {
+            "format": "~s"
+          }
+        },
+        "color": {
+          "field": "year_label",
+          "type": "nominal",
+          "title": "Year",
+          "scale": {
+            "range": ["#fdae6b", "#e6550d"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "year_label",
+            "title": "Year"
+          },
+          {
+            "field": "fire_count",
+            "title": "Fire detections",
+            "format": ","
+          },
+          {
+            "field": "change",
+            "title": "Change 2014–2024",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
+}
