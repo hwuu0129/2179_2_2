@@ -1,8 +1,8 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Global Bushfire Activity",
-    "subtitle": "NASA VIIRS fire detections, 2026"
+    "text": "Global Active Fire Detections by Country",
+    "subtitle": "NASA VIIRS fire detections, 6–15 May 2026"
   },
   "width": 900,
   "height": 500,
@@ -27,92 +27,87 @@
     },
     {
       "data": {
-        "url": "data/Global_fire.csv",
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
         "format": {
-          "type": "csv"
+          "type": "topojson",
+          "feature": "countries"
         }
       },
       "transform": [
         {
-          "calculate": "toNumber(datum.longitude)",
-          "as": "longitude_num"
+          "lookup": "id",
+          "from": {
+            "data": {
+              "url": "data/country_fire_2026_for_map.csv"
+            },
+            "key": "id",
+            "fields": [
+              "country",
+              "iso_a3",
+              "total_fire_count",
+              "avg_frp"
+            ]
+          }
         },
         {
-          "calculate": "toNumber(datum.latitude)",
-          "as": "latitude_num"
-        },
-        {
-          "calculate": "toNumber(datum.frp)",
-          "as": "frp_num"
-        },
-        {
-          "filter": "isValid(datum.longitude_num) && isValid(datum.latitude_num) && isValid(datum.frp_num)"
+          "filter": "isValid(datum.total_fire_count)"
         }
       ],
       "mark": {
-        "type": "circle",
-        "opacity": 0.45,
+        "type": "geoshape",
         "stroke": "white",
-        "strokeWidth": 0.2
+        "strokeWidth": 0.5
       },
       "encoding": {
-        "longitude": {
-          "field": "longitude_num",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "latitude_num",
-          "type": "quantitative"
-        },
-        "size": {
-          "field": "frp_num",
-          "type": "quantitative",
-          "title": "Fire Radiative Power",
-          "scale": {
-            "range": [5, 400]
-          }
-        },
         "color": {
-          "field": "frp_num",
+          "field": "total_fire_count",
           "type": "quantitative",
-          "title": "FRP",
+          "title": "Fire detections",
           "scale": {
             "scheme": "orangered"
+          },
+          "legend": {
+            "format": "~s"
           }
         },
         "tooltip": [
           {
-            "field": "latitude",
-            "type": "quantitative",
-            "title": "Latitude"
-          },
-          {
-            "field": "longitude",
-            "type": "quantitative",
-            "title": "Longitude"
-          },
-          {
-            "field": "frp",
-            "type": "quantitative",
-            "title": "Fire Radiative Power"
-          },
-          {
-            "field": "confidence",
+            "field": "country",
             "type": "nominal",
-            "title": "Confidence"
+            "title": "Country"
           },
           {
-            "field": "acq_date",
+            "field": "iso_a3",
             "type": "nominal",
-            "title": "Date"
+            "title": "ISO code"
           },
           {
-            "field": "daynight",
-            "type": "nominal",
-            "title": "Day / Night"
+            "field": "total_fire_count",
+            "type": "quantitative",
+            "title": "Fire detections",
+            "format": ","
+          },
+          {
+            "field": "avg_frp",
+            "type": "quantitative",
+            "title": "Average FRP",
+            "format": ".2f"
           }
         ]
       }
     }
-  ]
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "fontSize": 16,
+      "subtitleFontSize": 12
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    }
+  }
 }
