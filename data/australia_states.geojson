@@ -1,0 +1,46 @@
+{
+  "type": "FeatureCollection",
+  "name": "australia_states_simplified",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"STATE_NAME": "Western Australia", "name": "Western Australia", "state": "Western Australia", "postal": "WA"},
+      "geometry": {"type": "Polygon", "coordinates": [[[113.0,-35.2],[116.0,-34.8],[121.0,-34.2],[126.0,-32.2],[129.0,-31.8],[129.0,-13.7],[126.0,-13.8],[123.5,-16.5],[120.0,-19.0],[116.0,-21.0],[113.2,-25.0],[113.5,-29.5],[113.0,-35.2]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"STATE_NAME": "Northern Territory", "name": "Northern Territory", "state": "Northern Territory", "postal": "NT"},
+      "geometry": {"type": "Polygon", "coordinates": [[[129.0,-26.0],[138.0,-26.0],[138.0,-16.0],[136.5,-13.0],[133.0,-11.0],[130.0,-11.5],[129.0,-13.7],[129.0,-26.0]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"STATE_NAME": "South Australia", "name": "South Australia", "state": "South Australia", "postal": "SA"},
+      "geometry": {"type": "Polygon", "coordinates": [[[129.0,-38.0],[132.0,-38.0],[135.0,-35.8],[138.0,-35.0],[141.0,-38.1],[141.0,-26.0],[129.0,-26.0],[129.0,-38.0]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"STATE_NAME": "Queensland", "name": "Queensland", "state": "Queensland", "postal": "QLD"},
+      "geometry": {"type": "Polygon", "coordinates": [[[138.0,-29.0],[141.0,-29.0],[145.0,-29.0],[149.0,-28.0],[153.5,-25.5],[153.0,-20.0],[146.0,-16.0],[143.0,-11.0],[138.0,-16.0],[138.0,-29.0]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"STATE_NAME": "New South Wales", "name": "New South Wales", "state": "New South Wales", "postal": "NSW"},
+      "geometry": {"type": "Polygon", "coordinates": [[[141.0,-37.5],[145.0,-37.5],[149.5,-37.0],[153.6,-28.0],[150.0,-28.8],[145.0,-29.0],[141.0,-29.0],[141.0,-37.5]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"STATE_NAME": "Victoria", "name": "Victoria", "state": "Victoria", "postal": "VIC"},
+      "geometry": {"type": "Polygon", "coordinates": [[[141.0,-38.1],[144.0,-38.8],[147.0,-38.5],[150.0,-37.5],[149.0,-36.0],[145.0,-35.8],[141.0,-34.0],[141.0,-38.1]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"STATE_NAME": "Tasmania", "name": "Tasmania", "state": "Tasmania", "postal": "TAS"},
+      "geometry": {"type": "Polygon", "coordinates": [[[144.5,-43.8],[146.0,-44.0],[148.5,-43.0],[148.2,-41.2],[146.0,-40.8],[144.8,-41.5],[144.5,-43.8]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"STATE_NAME": "Australian Capital Territory", "name": "Australian Capital Territory", "state": "Australian Capital Territory", "postal": "ACT"},
+      "geometry": {"type": "Polygon", "coordinates": [[[148.75,-35.95],[149.40,-35.95],[149.40,-35.15],[148.75,-35.15],[148.75,-35.95]]]}
+    }
+  ]
+}
