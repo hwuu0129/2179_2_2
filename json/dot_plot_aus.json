@@ -1,28 +1,27 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Fire Intensity Across Australia",
-    "subtitle": "Bubble size shows fire detections; colour shows average FRP, 2024"
-  },
+  "title": "Fire Intensity Across Australia",
   "width": 800,
   "height": 500,
   "projection": {
     "type": "mercator",
     "center": [134, -28],
-    "scale": 700
+    "scale": 750
   },
   "layer": [
     {
       "data": {
         "url": "data/australia_states.geojson",
         "format": {
-          "type": "geojson"
+          "type": "json",
+          "property": "features"
         }
       },
       "mark": {
         "type": "geoshape",
         "fill": "#eeeeee",
-        "stroke": "white"
+        "stroke": "white",
+        "strokeWidth": 1
       }
     },
     {
@@ -31,9 +30,7 @@
       },
       "mark": {
         "type": "circle",
-        "opacity": 0.65,
-        "stroke": "white",
-        "strokeWidth": 0.4
+        "opacity": 0.65
       },
       "encoding": {
         "longitude": {
@@ -47,15 +44,15 @@
         "size": {
           "field": "fire_count",
           "type": "quantitative",
-          "title": "Fire Detections",
+          "title": "Fire Count",
           "scale": {
-            "range": [10, 1200]
+            "range": [20, 1200]
           }
         },
         "color": {
           "field": "avg_frp",
           "type": "quantitative",
-          "title": "Average FRP",
+          "title": "Average Fire Intensity",
           "scale": {
             "scheme": "reds"
           }
@@ -74,7 +71,7 @@
           {
             "field": "fire_count",
             "type": "quantitative",
-            "title": "Fire detections"
+            "title": "Fire Count"
           },
           {
             "field": "avg_frp",
