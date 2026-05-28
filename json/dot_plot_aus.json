@@ -13,7 +13,7 @@
       "mark": {"type": "geoshape", "fill": "#eeeeee", "stroke": "white"}
     },
     {
-      "data": {"url": "data/fire528.csv"},
+      "data": {"url": "data/fire.csv"},
       "mark": {"type": "circle", "opacity": 0.65},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
