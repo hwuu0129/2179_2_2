@@ -33,5 +33,19 @@
 <script>
   vegaEmbed("#global_fire_by_country", "json/global_fire_by_country.json");
 </script>
+
+  <h2>Bushfire Detections by Australian State</h2>
+
+<p>
+  This map shows bushfire detections across Australian states in 2024.
+  Darker colour means more fire detections.
+</p>
+
+<div id="aus_states_map"></div>
+
+<script>
+  vegaEmbed("#aus_states_map", "json/aus_states528.json")
+    .catch(error => console.error(error));
+</script>
 </body>
 </html>
