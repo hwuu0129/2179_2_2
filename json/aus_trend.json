@@ -7,7 +7,7 @@
   "width": 650,
   "height": 350,
   "data": {
-    "url": "data/australia_yearly_fire_2020_2024.csv"
+    "url": "data/australia_yearly_fire_2014_2024.csv"
   },
   "mark": {
     "type": "line",
