@@ -88,5 +88,22 @@
     })
     .catch(console.error);
 </script>
+
+  <h2>Country-Year Fire Detection Heatmap (2014–2024)</h2>
+
+<p>
+  This heatmap compares annual active fire detections across the top 10 countries
+  from 2014 to 2024. Darker cells indicate higher numbers of fire detections.
+</p>
+
+<div id="country_year_heatmap_2014_2024"></div>
+
+<script>
+  vegaEmbed("#country_year_heatmap_2014_2024", "json/country_year_heatmap_2014_2024.json")
+    .then(function(result) {
+      console.log("Country-year heatmap loaded");
+    })
+    .catch(console.error);
+</script>
 </body>
 </html>
