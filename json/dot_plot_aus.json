@@ -1,45 +1,128 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Fire Intensity Across Australia",
-  "width": 800,
-  "height": 500,
-  "projection": {"type": "mercator"},
+  "title": {
+    "text": "Fire Intensity Across Australia",
+    "subtitle": "Fire Radiative Power (FRP) from NASA VIIRS \u2014 2024",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 10
+  },
+  "width": 600,
+  "height": 400,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -28
+    ],
+    "scale": 550
+  },
   "layer": [
     {
       "data": {
         "url": "https://hwuu0129.github.io/2179_2_2/data/australia_states.geojson",
-        "format": {"type": "json", "property": "features"}
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
       },
-      "mark": {"type": "geoshape", "fill": "#eeeeee", "stroke": "white"}
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0e9d2",
+        "stroke": "white",
+        "strokeWidth": 1
+      }
     },
     {
-      "data": {"url": "https://hwuu0129.github.io/2179_2_2/data/fire.csv"},
-      "mark": {"type": "circle", "opacity": 0.65},
+      "data": {
+        "url": "https://hwuu0129.github.io/2179_2_2/data/fire.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.latitude > -44 && datum.latitude < -10 && datum.longitude > 112 && datum.longitude < 154"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.6
+      },
       "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
         "size": {
           "field": "frp",
           "type": "quantitative",
-          "title": "Fire Radiative Power",
-          "scale": {"range": [10, 800]}
+         
+          "scale": {
+            "range": [
+              10,
+              600
+            ]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 9,
+            "labelFontSize": 9,
+            "symbolSize": 40,
+            "gradientLength": 60,
+            "padding": 4,
+            "offset": -20
+          }
         },
         "color": {
           "field": "frp",
           "type": "quantitative",
-          "title": "Fire Intensity",
-          "scale": {"scheme": "reds"}
+          "title": "Fire Intensity (FRP)",
+          "scale": {
+            "scheme": "reds"
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 9,
+            "labelFontSize": 9,
+            "gradientLength": 60,
+            "gradientThickness": 8,
+            "padding": 4,
+            "offset": -150
+          }
         },
         "tooltip": [
-          {"field": "latitude", "type": "quantitative"},
-          {"field": "longitude", "type": "quantitative"},
+          {
+            "field": "latitude",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Latitude"
+          },
+          {
+            "field": "longitude",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Longitude"
+          },
           {
             "field": "frp",
             "type": "quantitative",
-            "title": "Fire Radiative Power"
+           
+            "format": ".1f"
           },
-          {"field": "acq_date", "type": "nominal", "title": "Date"},
-          {"field": "confidence", "type": "nominal", "title": "Confidence"}
+          {
+            "field": "acq_date",
+            "type": "nominal",
+            "title": "Date"
+          },
+          {
+            "field": "confidence",
+            "type": "nominal",
+            "title": "Confidence"
+          }
         ]
       }
     }
