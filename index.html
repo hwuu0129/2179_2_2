@@ -136,13 +136,11 @@
 
   <!-- 在你的 index.html 里这样嵌入 -->
 <div id="small-multiples"></div>
-<div id="rainfall-chart"></div>
 <div id="scatter-chart"></div>
 <div id="diverging-chart"></div>
 
 <script>
   vegaEmbed("#small-multiples", "json/small_multiples.json", {actions: true});
-  vegaEmbed("#rainfall-chart",  "json/rainfall_by_state.json", {actions: false});
   vegaEmbed("#scatter-chart",   "json/scatter_rainfall_fire.json", {actions: false});
   vegaEmbed("#diverging-chart", "json/diverging_anomaly.json", {actions: false});
 </script>
