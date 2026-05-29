@@ -67,14 +67,14 @@
         },
         "opacity": {
           "condition": {
-            "param": "hover_state_rain",
+            "param": "hover_rain",
             "value": 1
           },
           "value": 0.15
         },
         "strokeWidth": {
           "condition": {
-            "param": "hover_state_rain",
+            "param": "hover_rain",
             "value": 3
           },
           "value": 2
@@ -151,7 +151,7 @@
   ],
   "params": [
     {
-      "name": "hover_state_rain",
+      "name": "hover_rain",
       "select": {
         "type": "point",
         "fields": [
