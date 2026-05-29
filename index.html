@@ -91,9 +91,19 @@
     vegaEmbed("#diverging-chart", "json/diverging_anomaly.json", {actions: false}).catch(console.error);
   </script>
 
-<div id="aus-rainfall"></div>
+<h2>Annual Rainfall by Australian State/Territory (2014–2024)</h2>
+
+<p>
+  This multi-line chart compares annual rainfall across Australian states and territories
+  from 2014 to 2024. The red dashed line marks 2019, indicating the beginning of the
+  Black Summer period.
+</p>
+
+<div id="rainfall-state-multiline"></div>
+
 <script>
-  vegaEmbed("#aus-rainfall", "json/aus_rainfall_state.json", {actions: true}).catch(console.error);
+  vegaEmbed("#rainfall-state-multiline", "json/rainfall_by_state_multiline.json", {actions: true})
+    .catch(console.error);
 </script>
 
 </body>
