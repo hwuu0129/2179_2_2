@@ -8,11 +8,14 @@
     "offset": 10
   },
   "data": {
-    "url": "data/australia_state_year_2014_2024.csv"
+    "url": "https://hwuu0129.github.io/2179_2_2/data/australia_state_year_2014_2024.csv"
   },
   "transform": [
     {
       "filter": "datum.STATE_NAME != null && datum.year != null"
+    },
+    {
+      "filter": "indexof(['New South Wales','Victoria','Queensland','Western Australia','South Australia','Northern Territory','Tasmania','Australian Capital Territory'], datum.STATE_NAME) >= 0"
     }
   ],
   "facet": {
