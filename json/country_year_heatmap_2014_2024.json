@@ -7,7 +7,7 @@
   "width": 700,
   "height": 360,
   "data": {
-    "url": "data/country_year_heatmap_2014_2024.csv"
+    "url": "https://hwuu0129.github.io/2179_2_2/data/country_year_heatmap_2014_2024.csv"
   },
   "mark": {
     "type": "rect",
