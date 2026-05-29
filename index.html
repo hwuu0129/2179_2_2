@@ -133,5 +133,18 @@
   vegaEmbed("#australia_state_share_stacked_bar", "json/australia_state_share_stacked_bar.json")
     .catch(console.error);
 </script>
+
+  <!-- 在你的 index.html 里这样嵌入 -->
+<div id="small-multiples"></div>
+<div id="rainfall-chart"></div>
+<div id="scatter-chart"></div>
+<div id="diverging-chart"></div>
+
+<script>
+  vegaEmbed('#small-multiples', 'small_multiples.json', {actions: false});
+  vegaEmbed('#rainfall-chart',  'rainfall_by_state.json', {actions: false});
+  vegaEmbed('#scatter-chart',   'scatter_rainfall_fire.json', {actions: false});
+  vegaEmbed('#diverging-chart', 'diverging_anomaly.json', {actions: false});
+</script>
 </body>
 </html>
