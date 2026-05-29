@@ -7,13 +7,13 @@
   "layer": [
     {
       "data": {
-        "url": "data/australia_states.geojson",
+        "url": "https://hwuu0129.github.io/2179_2_2/data/australia_states.geojson",
         "format": {"type": "json", "property": "features"}
       },
       "mark": {"type": "geoshape", "fill": "#eeeeee", "stroke": "white"}
     },
     {
-      "data": {"url": "data/fire.csv"},
+      "data": {"url": "https://hwuu0129.github.io/2179_2_2/data/fire.csv"},
       "mark": {"type": "circle", "opacity": 0.65},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
