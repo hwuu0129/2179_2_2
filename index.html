@@ -144,5 +144,9 @@
   vegaEmbed("#scatter-chart",   "json/scatter_rainfall_fire.json", {actions: false});
   vegaEmbed("#diverging-chart", "json/diverging_anomaly.json", {actions: false});
 </script>
+  <div id="vis"></div>
+<script>
+vegaEmbed('#vis', "json/rainfall_by_state.json", {actions: true});
+</script>
 </body>
 </html>
