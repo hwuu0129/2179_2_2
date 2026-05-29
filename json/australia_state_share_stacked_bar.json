@@ -1,49 +1,71 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Share of Fire Detections by Australian State",
-    "subtitle": "Percentage contribution of each state to annual fire detections, 2014–2024"
+    "subtitle": "Percentage contribution of each state to annual fire detections, 2014–2024",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 10
   },
-  "width": 750,
+  "width": 600,
   "height": 400,
   "data": {
     "url": "https://hwuu0129.github.io/2179_2_2/data/australia_state_year_2014_2024.csv"
   },
-  "mark": {
-    "type": "bar"
-  },
+  "mark": {"type": "bar", "width": {"band": 0.85}},
   "encoding": {
     "x": {
       "field": "year",
       "type": "ordinal",
-      "title": "Year"
+      "title": "Year",
+      "axis": {"labelAngle": 0, "labelFontSize": 11}
     },
     "y": {
       "aggregate": "sum",
       "field": "total_fire",
       "type": "quantitative",
-      "title": "Share of fire detections",
+      "title": "Share of fire detections (%)",
       "stack": "normalize",
-      "axis": {
-        "format": "%"
-      }
+      "axis": {"format": "%", "labelFontSize": 11, "titleFontSize": 12}
     },
     "color": {
       "field": "STATE_NAME",
       "type": "nominal",
-      "title": "State"
+      "title": "State",
+      "scale": {
+        "domain": [
+          "Northern Territory",
+          "Queensland",
+          "Western Australia",
+          "New South Wales",
+          "Victoria",
+          "South Australia",
+          "Tasmania",
+          "Australian Capital Territory"
+        ],
+        "range": [
+          "#d62728",
+          "#ff7f0e",
+          "#2ca02c",
+          "#1f77b4",
+          "#9467bd",
+          "#8c564b",
+          "#e377c2",
+          "#7f7f7f"
+        ]
+      },
+      "legend": {
+        "orient": "right",
+        "labelFontSize": 11,
+        "titleFontSize": 11,
+        "symbolSize": 120
+      }
     },
     "tooltip": [
-      {
-        "field": "STATE_NAME",
-        "type": "nominal",
-        "title": "State"
-      },
-      {
-        "field": "year",
-        "type": "ordinal",
-        "title": "Year"
-      },
+      {"field": "STATE_NAME", "type": "nominal", "title": "State"},
+      {"field": "year", "type": "ordinal", "title": "Year"},
       {
         "aggregate": "sum",
         "field": "total_fire",
@@ -52,19 +74,5 @@
         "format": ","
       }
     ]
-  },
-  "config": {
-    "axis": {
-      "labelFontSize": 11,
-      "titleFontSize": 12
-    },
-    "legend": {
-      "labelFontSize": 11,
-      "titleFontSize": 12
-    },
-    "title": {
-      "fontSize": 16,
-      "subtitleFontSize": 12
-    }
   }
 }
