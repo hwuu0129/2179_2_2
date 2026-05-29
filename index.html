@@ -134,7 +134,7 @@
     .catch(console.error);
 </script>
 
-  <!-- 在你的 index.html 里这样嵌入 -->
+
 <div id="small-multiples"></div>
 <div id="scatter-chart"></div>
 <div id="diverging-chart"></div>
@@ -144,9 +144,10 @@
   vegaEmbed("#scatter-chart",   "json/scatter_rainfall_fire.json", {actions: false});
   vegaEmbed("#diverging-chart", "json/diverging_anomaly.json", {actions: false});
 </script>
-  <div id="vis"></div>
+ <div id="rainfall-chart"></div>
 <script>
-vegaEmbed('#vis', "json/rainfall_by_state.json", {actions: true});
+  vegaEmbed('#rainfall-chart', 'json/rainfall_by_state.json', {actions: true});
+</script>
 </script>
 </body>
 </html>
