@@ -6,105 +6,170 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #fff;
+      color: #222;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.3em;
+    }
+    h2 {
+      font-size: 1.4em;
+      margin-top: 2em;
+      margin-bottom: 0.4em;
+      color: #222;
+    }
+    h3 {
+      font-size: 1.1em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #e63946;
+      margin-top: 3em;
+      margin-bottom: 0.2em;
+      border-top: 2px solid #e63946;
+      padding-top: 0.6em;
+    }
+    p {
+      font-size: 0.97em;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 1em;
+      max-width: 800px;
+    }
+    .chart {
+      margin: 1.5em 0 2.5em 0;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 3em 0;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h2>Global Bushfire Activity</h2>
-  <p>This map shows global bushfire activity using fire detection points.</p>
-  <div id="global_fire"></div>
+  <h1>Global Bushfire Activity</h1>
+  <p>
+    Bushfires are one of the most destructive natural hazards on Earth. This visualisation
+    explores global fire patterns from 2014 to 2024, with a focus on Australia — examining
+    historical trends, the role of rainfall, and current fire conditions.
+  </p>
+
+  <!-- ── Chapter 1 ── -->
+  <h3>Chapter 1 — Global Overview</h3>
+
+  <h2>Global Bushfire Detections</h2>
+  <p>This map shows global bushfire activity using satellite fire detection points from NASA FIRMS.</p>
+  <div id="global_fire" class="chart"></div>
   <script>
     vegaEmbed("#global_fire", "json/global_fire.json").catch(console.error);
   </script>
 
   <h2>Top 20 Countries by Bushfire Activity</h2>
-  <p>This bar chart shows the top 20 countries with the highest number of high-confidence fire detections.</p>
-  <div id="global_fire_by_country"></div>
+  <p>The top 20 countries with the highest number of high-confidence fire detections, ranked by total fire count.</p>
+  <div id="global_fire_by_country" class="chart"></div>
   <script>
     vegaEmbed("#global_fire_by_country", "json/global_fire_by_country.json").catch(console.error);
   </script>
 
-  <h2>Bushfire Detections by Australian State</h2>
-  <p>This map shows bushfire detections across Australian states in 2024. Darker colour means more fire detections.</p>
-  <div id="aus_states_map"></div>
-  <script>
-    vegaEmbed("#aus_states_map", "json/aus_states528.json").catch(console.error);
-  </script>
-
-  <h2>Fire Intensity Across Australia</h2>
-  <p>This bubble map shows bushfire activity across Australia in 2024. The size of each bubble represents the number of fire detections, while the colour represents average fire intensity.</p>
-  <div id="aus_bubble_map"></div>
-  <script>
-    vegaEmbed("#aus_bubble_map", "json/dot_plot_aus.json").catch(console.error);
-  </script>
-
-  <div id="australia_yearly_line"></div>
-  <script>
-    vegaEmbed("#australia_yearly_line", "json/aus_trend.json").catch(console.error);
-  </script>
-
-  <div id="australia_daily_line"></div>
-  <script>
-    vegaEmbed("#australia_daily_line", "json/australia_fire_daily_trend.json").catch(console.error);
-  </script>
-
   <h2>Global Fire Detections Over Time (2014–2024)</h2>
-  <p>This line chart shows the annual trend of active fire detections globally from 2014 to 2024. Global fire detections peaked in 2023, while 2022 and 2024 were lower than several earlier years in the dataset.</p>
-  <div id="global_yearly_line_2014_2024"></div>
+  <p>Annual trend of active fire detections globally from 2014 to 2024. Global fire detections peaked in 2023, while 2022 saw a notable dip linked to La Niña conditions.</p>
+  <div id="global_yearly_line_2014_2024" class="chart"></div>
   <script>
     vegaEmbed("#global_yearly_line_2014_2024", "json/global_trend.json").catch(console.error);
   </script>
 
   <h2>Country-Year Fire Detection Heatmap (2014–2024)</h2>
-  <p>This heatmap compares annual active fire detections across the top 10 countries from 2014 to 2024. Darker cells indicate higher numbers of fire detections.</p>
-  <div id="country_year_heatmap_2014_2024"></div>
+  <p>Annual fire detections across the top 10 countries from 2014 to 2024. Darker cells indicate higher fire activity. Australia's spike in 2019 stands out clearly.</p>
+  <div id="country_year_heatmap_2014_2024" class="chart"></div>
   <script>
     vegaEmbed("#country_year_heatmap_2014_2024", "json/country_year_heatmap_2014_2024.json").catch(console.error);
   </script>
 
   <h2>Change in Fire Detections by Country (2014 vs 2024)</h2>
-  <p>This dumbbell chart compares active fire detections in 2014 and 2024 for the countries with the largest changes. The distance between the two points shows how much fire activity changed over the decade.</p>
-  <div id="country_dumbbell_2014_2024"></div>
+  <p>This dumbbell chart compares fire detections in 2014 and 2024 for the countries with the largest absolute changes over the decade.</p>
+  <div id="country_dumbbell_2014_2024" class="chart"></div>
   <script>
     vegaEmbed("#country_dumbbell_2014_2024", "json/country_dumbbell_2014_2024.json").catch(console.error);
   </script>
 
-  <h2>Share of Fire Detections by Australian State</h2>
-  <p>This 100% stacked bar chart shows how each Australian state contributed to the country's annual active fire detections from 2014 to 2024.</p>
-  <div id="australia_state_share_stacked_bar"></div>
+  <!-- ── Chapter 2 ── -->
+  <h3>Chapter 2 — Australia: A Decade of Bushfires (2014–2024)</h3>
+
+  <h2>Bushfire Detections by Australian State</h2>
+  <p>State-level fire detections across Australia in 2024. Darker shading indicates higher fire activity. The Northern Territory and Western Australia consistently record the most detections.</p>
+  <div id="aus_states_map" class="chart"></div>
+  <script>
+    vegaEmbed("#aus_states_map", "json/aus_states528.json").catch(console.error);
+  </script>
+
+  <h2>Share of Fire Detections by Australian State (2014–2024)</h2>
+  <p>Each bar shows how each state contributed to Australia's total annual fire detections. The Northern Territory dominates most years, while New South Wales surged dramatically in 2019 during the Black Summer.</p>
+  <div id="australia_state_share_stacked_bar" class="chart"></div>
   <script>
     vegaEmbed("#australia_state_share_stacked_bar", "json/australia_state_share_stacked_bar.json").catch(console.error);
   </script>
 
-  <div id="small-multiples"></div>
+  <h2>Annual Bushfire Detections by State (2014–2024)</h2>
+  <p>Each panel shows the fire detection trend for one state or territory from 2014 to 2024, using a shared Y-axis for direct comparison.</p>
+  <div id="small-multiples" class="chart"></div>
   <script>
     vegaEmbed("#small-multiples", "json/small_multiples.json", {actions: true}).catch(console.error);
   </script>
 
-  <div id="scatter-chart"></div>
+  <h2>Australia Total Fire Detections Over Time (2014–2024)</h2>
+  <div id="australia_yearly_line" class="chart"></div>
+  <script>
+    vegaEmbed("#australia_yearly_line", "json/aus_trend.json").catch(console.error);
+  </script>
+
+  <!-- ── Chapter 3 ── -->
+  <h3>Chapter 3 — Current Fire Conditions (2026)</h3>
+
+  <h2>Fire Intensity Across Australia</h2>
+  <p>Bubble map showing recent bushfire activity across Australia. Bubble size represents fire detection count; colour represents average fire intensity (FRP).</p>
+  <div id="aus_bubble_map" class="chart"></div>
+  <script>
+    vegaEmbed("#aus_bubble_map", "json/dot_plot_aus.json").catch(console.error);
+  </script>
+
+  <h2>Daily Bushfire Detections in Australia (March–May 2026)</h2>
+  <p>Daily fire detection counts over the most recent two months, showing the current fire season trajectory. Two peak events are highlighted.</p>
+  <div id="australia_daily_line" class="chart"></div>
+  <script>
+    vegaEmbed("#australia_daily_line", "json/australia_fire_daily_trend.json").catch(console.error);
+  </script>
+
+  <!-- ── Chapter 4 ── -->
+  <h3>Chapter 4 — The Role of Rainfall</h3>
+
+  <h2>Annual Rainfall by Australian State/Territory (2014–2024)</h2>
+  <p>Area-averaged rainfall across six states from 2014 to 2024. The red dashed line marks 2019, when rainfall hit its lowest point across nearly all states — coinciding with the Black Summer bushfire crisis.</p>
+  <div id="rainfall-state-multiline" class="chart"></div>
+  <script>
+    vegaEmbed("#rainfall-state-multiline", "json/rainfall_by_state_multiline.json", {actions: true}).catch(console.error);
+  </script>
+
+  <h2>Rainfall vs Bushfire Detections (2014–2024)</h2>
+  <p>Each point represents one state in one year. Triangles mark 2019. States with lower annual rainfall tend to record more fire detections — the negative correlation is strongest in NSW and South Australia.</p>
+  <div id="scatter-chart" class="chart"></div>
   <script>
     vegaEmbed("#scatter-chart", "json/scatter_rainfall_fire.json", {actions: true}).catch(console.error);
   </script>
 
-  <div id="diverging-chart"></div>
+  <h2>Bushfire & Rainfall Deviation from Average (2014–2024)</h2>
+  <p>Orange bars show how much fire activity deviated above or below the 11-year average. Blue bars show the same for rainfall. In 2019, fire activity was 37% above average while rainfall was 42% below — the starkest divergence in the dataset.</p>
+  <div id="diverging-chart" class="chart"></div>
   <script>
     vegaEmbed("#diverging-chart", "json/diverging_anomaly.json", {actions: true}).catch(console.error);
   </script>
-
-<h2>Annual Rainfall by Australian State/Territory (2014–2024)</h2>
-
-<p>
-  This multi-line chart compares annual rainfall across Australian states and territories
-  from 2014 to 2024. The red dashed line marks 2019, indicating the beginning of the
-  Black Summer period.
-</p>
-
-<div id="rainfall-state-multiline"></div>
-
-<script>
-  vegaEmbed("#rainfall-state-multiline", "json/rainfall_by_state_multiline.json", {actions: true})
-    .catch(console.error);
-</script>
 
 </body>
 </html>
