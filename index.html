@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Global Bushfire Activity</title>
-
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -12,142 +11,90 @@
 <body>
 
   <h2>Global Bushfire Activity</h2>
-  <p>
-    This map shows global bushfire activity using fire detection points.
-  </p>
-
+  <p>This map shows global bushfire activity using fire detection points.</p>
   <div id="global_fire"></div>
-
   <script>
-    vegaEmbed("#global_fire", "json/global_fire.json")
-      .catch(error => console.error(error));
+    vegaEmbed("#global_fire", "json/global_fire.json").catch(console.error);
   </script>
 
   <h2>Top 20 Countries by Bushfire Activity</h2>
-<p>
-  This bar chart shows the top 20 countries with the highest number of high-confidence fire detections.
-</p>
-
-<div id="global_fire_by_country"></div>
-
-<script>
-  vegaEmbed("#global_fire_by_country", "json/global_fire_by_country.json");
-</script>
+  <p>This bar chart shows the top 20 countries with the highest number of high-confidence fire detections.</p>
+  <div id="global_fire_by_country"></div>
+  <script>
+    vegaEmbed("#global_fire_by_country", "json/global_fire_by_country.json").catch(console.error);
+  </script>
 
   <h2>Bushfire Detections by Australian State</h2>
-
-<p>
-  This map shows bushfire detections across Australian states in 2024.
-  Darker colour means more fire detections.
-</p>
-
-<div id="aus_states_map"></div>
-
-<script>
-  vegaEmbed("#aus_states_map", "json/aus_states528.json")
-    .catch(error => console.error(error));
-</script>
+  <p>This map shows bushfire detections across Australian states in 2024. Darker colour means more fire detections.</p>
+  <div id="aus_states_map"></div>
+  <script>
+    vegaEmbed("#aus_states_map", "json/aus_states528.json").catch(console.error);
+  </script>
 
   <h2>Fire Intensity Across Australia</h2>
+  <p>This bubble map shows bushfire activity across Australia in 2024. The size of each bubble represents the number of fire detections, while the colour represents average fire intensity.</p>
+  <div id="aus_bubble_map"></div>
+  <script>
+    vegaEmbed("#aus_bubble_map", "json/dot_plot_aus.json").catch(console.error);
+  </script>
 
-<p>
-  This bubble map shows bushfire activity across Australia in 2024.
-  The size of each bubble represents the number of fire detections, while the colour represents average fire intensity.
-</p>
-
-<div id="aus_bubble_map"></div>
-
-<script>
-  vegaEmbed("#aus_bubble_map", "json/dot_plot_aus.json").then(function(result) {
-  }).catch(console.error);
-</script>
-  
-<div id="australia_yearly_line"></div>
-<script>
-  vegaEmbed("#australia_yearly_line", "json/aus_trend.json");
-</script>
+  <div id="australia_yearly_line"></div>
+  <script>
+    vegaEmbed("#australia_yearly_line", "json/aus_trend.json").catch(console.error);
+  </script>
 
   <div id="australia_daily_line"></div>
-<script>
-  vegaEmbed("#australia_daily_line", "json/australia_fire_daily_trend.json");
-</script>
- <h2>Global Fire Detections Over Time (2014–2024)</h2>
+  <script>
+    vegaEmbed("#australia_daily_line", "json/australia_fire_daily_trend.json").catch(console.error);
+  </script>
 
-<p>
-  This line chart shows the annual trend of active fire detections globally from
-  2014 to 2024. Global fire detections peaked in 2023, while 2022 and 2024 were
-  lower than several earlier years in the dataset.
-</p>
-
-<div id="global_yearly_line_2014_2024"></div>
-
-<script>
-  vegaEmbed("#global_yearly_line_2014_2024", "json/global_trend.json")
-    .then(function(result) {
-      console.log("Global yearly line chart loaded");
-    })
-    .catch(console.error);
-</script>
+  <h2>Global Fire Detections Over Time (2014–2024)</h2>
+  <p>This line chart shows the annual trend of active fire detections globally from 2014 to 2024. Global fire detections peaked in 2023, while 2022 and 2024 were lower than several earlier years in the dataset.</p>
+  <div id="global_yearly_line_2014_2024"></div>
+  <script>
+    vegaEmbed("#global_yearly_line_2014_2024", "json/global_trend.json").catch(console.error);
+  </script>
 
   <h2>Country-Year Fire Detection Heatmap (2014–2024)</h2>
+  <p>This heatmap compares annual active fire detections across the top 10 countries from 2014 to 2024. Darker cells indicate higher numbers of fire detections.</p>
+  <div id="country_year_heatmap_2014_2024"></div>
+  <script>
+    vegaEmbed("#country_year_heatmap_2014_2024", "json/country_year_heatmap_2014_2024.json").catch(console.error);
+  </script>
 
-<p>
-  This heatmap compares annual active fire detections across the top 10 countries
-  from 2014 to 2024. Darker cells indicate higher numbers of fire detections.
-</p>
-
-<div id="country_year_heatmap_2014_2024"></div>
-
-<script>
-  vegaEmbed("#country_year_heatmap_2014_2024", "json/country_year_heatmap_2014_2024.json")
-    .then(function(result) {
-      console.log("Country-year heatmap loaded");
-    })
-    .catch(console.error);
-</script>
   <h2>Change in Fire Detections by Country (2014 vs 2024)</h2>
-
-<p>
-  This dumbbell chart compares active fire detections in 2014 and 2024 for the
-  countries with the largest changes. The distance between the two points shows
-  how much fire activity changed over the decade.
-</p>
-
-<div id="country_dumbbell_2014_2024"></div>
-
-<script>
-  vegaEmbed("#country_dumbbell_2014_2024", "json/country_dumbbell_2014_2024.json")
-    .catch(console.error);
-</script>
+  <p>This dumbbell chart compares active fire detections in 2014 and 2024 for the countries with the largest changes. The distance between the two points shows how much fire activity changed over the decade.</p>
+  <div id="country_dumbbell_2014_2024"></div>
+  <script>
+    vegaEmbed("#country_dumbbell_2014_2024", "json/country_dumbbell_2014_2024.json").catch(console.error);
+  </script>
 
   <h2>Share of Fire Detections by Australian State</h2>
+  <p>This 100% stacked bar chart shows how each Australian state contributed to the country's annual active fire detections from 2014 to 2024.</p>
+  <div id="australia_state_share_stacked_bar"></div>
+  <script>
+    vegaEmbed("#australia_state_share_stacked_bar", "json/australia_state_share_stacked_bar.json").catch(console.error);
+  </script>
 
-<p>
-  This 100% stacked bar chart shows how each Australian state contributed to
-  the country's annual active fire detections from 2014 to 2024.
-</p>
+  <div id="small-multiples"></div>
+  <script>
+    vegaEmbed("#small-multiples", "json/small_multiples.json", {actions: true}).catch(console.error);
+  </script>
 
-<div id="australia_state_share_stacked_bar"></div>
+  <div id="scatter-chart"></div>
+  <script>
+    vegaEmbed("#scatter-chart", "json/scatter_rainfall_fire.json", {actions: false}).catch(console.error);
+  </script>
 
-<script>
-  vegaEmbed("#australia_state_share_stacked_bar", "json/australia_state_share_stacked_bar.json")
-    .catch(console.error);
-</script>
+  <div id="diverging-chart"></div>
+  <script>
+    vegaEmbed("#diverging-chart", "json/diverging_anomaly.json", {actions: false}).catch(console.error);
+  </script>
 
+  <div id="rainfall-chart"></div>
+  <script>
+    vegaEmbed("#rainfall-chart", "json/rainfall_by_state.json", {actions: true}).catch(console.error);
+  </script>
 
-<div id="small-multiples"></div>
-<div id="scatter-chart"></div>
-<div id="diverging-chart"></div>
-
-<script>
-  vegaEmbed("#small-multiples", "json/small_multiples.json", {actions: true});
-  vegaEmbed("#scatter-chart",   "json/scatter_rainfall_fire.json", {actions: false});
-  vegaEmbed("#diverging-chart", "json/diverging_anomaly.json", {actions: false});
-</script>
- <div id="rainfall-chart"></div>
-<script>
-  vegaEmbed('#rainfall-chart', 'json/rainfall_by_state.json', {actions: true});
-</script>
-</script>
 </body>
 </html>
