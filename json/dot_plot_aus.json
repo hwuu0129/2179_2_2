@@ -9,8 +9,8 @@
     "anchor": "middle",
     "offset": 10
   },
-  "width": 380,
-  "height": 300,
+  "width": 400,
+  "height": 310,
   "projection": {"type": "mercator", "center": [134, -28], "scale": 430},
   "layer": [
     {
@@ -37,36 +37,36 @@
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {
-          "field": "frp",
-          "type": "quantitative",
-          "scale": {"range": [10, 600]},
-          "legend": {
-            "orient": "bottom",
-            "titleFontSize": 10,
-            "labelFontSize": 10,
-            "symbolSize": 60,
-            "padding": 4,
-            "offset": 8,
-            "columns": 4
-          }
-        },
-        "color": {
-          "field": "frp",
-          "type": "quantitative",
-          "title": "",
-          "scale": {"scheme": "reds"},
-          "legend": {
-            "orient": "bottom",
-            "titleFontSize": 5,
-            "labelFontSize": 10,
-            "gradientThickness": 5,
-            "padding": 4,
-            "offset": 8,
-            "symbolSize": 10,
-            "columns": 5
-            
-          }
-        },
+  "field": "frp",
+  "type": "quantitative",
+  "scale": {"range": [10, 600]},
+  "legend": {
+    "orient": "none",
+    "legendX": 130,
+    "legendY": 345,
+    "titleFontSize": 10,
+    "labelFontSize": 10,
+    "symbolSize": 60,
+    "padding": 4,
+    "columns": 5
+  }
+},
+"color": {
+  "field": "frp",
+  "type": "quantitative",
+  "title": "",
+  "scale": {"scheme": "reds"},
+  "legend": {
+    "orient": "none",
+    "legendX": 50,
+    "legendY": 345,
+    "titleFontSize": 5,
+    "labelFontSize": 10,
+    "gradientThickness": 5,
+    "gradientLength": 120,
+    "padding": 4
+  }
+},
         "tooltip": [
           {
             "field": "latitude",
@@ -88,5 +88,5 @@
     }
   ],
   "padding": 0,
-    "background": "#f7f5f0"
+  "background": "#f7f5f0"
 }
