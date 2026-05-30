@@ -9,8 +9,8 @@
     "anchor": "start",
     "offset": 10
   },
-  "width": 600,
-  "height": 400,
+  "width": 420,
+  "height": 380,
   "projection": {
     "type": "mercator",
     "center": [
@@ -60,7 +60,6 @@
         "size": {
           "field": "frp",
           "type": "quantitative",
-         
           "scale": {
             "range": [
               10,
@@ -110,7 +109,6 @@
           {
             "field": "frp",
             "type": "quantitative",
-           
             "format": ".1f"
           },
           {
