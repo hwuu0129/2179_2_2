@@ -1,23 +1,30 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Annual Rainfall by Australian State/Territory (2014–2024)",
+    "text": "Annual Rainfall by Australian State/Territory (2014\u20132024)",
     "subtitle": "Area-averaged rainfall (mm) with Black Summer reference"
   },
-  "width": 600,
-  "height": 400,
+  "width": 700,
+  "height": 420,
   "layer": [
     {
       "data": {
         "url": "https://hwuu0129.github.io/2179_2_2/data/aus_rainfall_state_2014_2024.csv"
       },
-      "mark": {"type": "line", "point": true, "strokeWidth": 2},
+      "mark": {
+        "type": "line",
+        "point": true,
+        "strokeWidth": 2
+      },
       "encoding": {
         "x": {
           "field": "year",
           "type": "quantitative",
           "title": "Year",
-          "axis": {"format": "d", "tickMinStep": 1}
+          "axis": {
+            "format": "d",
+            "tickMinStep": 1
+          }
         },
         "y": {
           "field": "rainfall_mm",
@@ -30,24 +37,56 @@
           "title": "State / Territory"
         },
         "tooltip": [
-          {"field": "state", "title": "State"},
-          {"field": "year", "title": "Year", "format": "d"},
-          {"field": "rainfall_mm", "title": "Rainfall (mm)", "format": ".1f"}
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "year",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "rainfall_mm",
+            "title": "Rainfall (mm)",
+            "format": ".1f"
+          }
         ]
       }
     },
     {
-      "data": {"values": [{"year": 2019}]},
+      "data": {
+        "values": [
+          {
+            "year": 2019
+          }
+        ]
+      },
       "mark": {
         "type": "rule",
         "color": "red",
-        "strokeDash": [6, 6],
+        "strokeDash": [
+          6,
+          6
+        ],
         "strokeWidth": 2
       },
-      "encoding": {"x": {"field": "year", "type": "quantitative"}}
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        }
+      }
     },
     {
-      "data": {"values": [{"year": 2019, "label": "Black Summer"}]},
+      "data": {
+        "values": [
+          {
+            "year": 2019,
+            "label": "Black Summer"
+          }
+        ]
+      },
       "mark": {
         "type": "text",
         "color": "red",
@@ -57,15 +96,31 @@
         "dy": -8
       },
       "encoding": {
-        "x": {"field": "year", "type": "quantitative"},
-        "y": {"value": 18},
-        "text": {"field": "label"}
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "value": 18
+        },
+        "text": {
+          "field": "label"
+        }
       }
     }
   ],
   "config": {
-    "axis": {"labelFontSize": 11, "titleFontSize": 12},
-    "legend": {"labelFontSize": 11, "titleFontSize": 12},
-    "title": {"fontSize": 16, "subtitleFontSize": 12}
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "title": {
+      "fontSize": 16,
+      "subtitleFontSize": 12
+    }
   }
 }
