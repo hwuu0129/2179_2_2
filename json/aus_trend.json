@@ -40,5 +40,6 @@
     {"field": "grid_cells", "title": "Grid cells"}
   ]
 },
-  "padding": 0
+  "padding": 0,
+  "background": "#f7f5f0"
 }
