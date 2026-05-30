@@ -6,11 +6,11 @@
     "fontSize": 15,
     "subtitleFontSize": 11,
     "fontWeight": "bold",
-    "anchor": "start",
+    "anchor": "middle",
     "offset": 10
   },
-  "width": 420,
-  "height": 320,
+  "width": 360,
+  "height": 300,
   "data": {
     "url": "https://hwuu0129.github.io/2179_2_2/data/country_dumbbell_2014_2024.csv"
   },
@@ -103,10 +103,12 @@
             ]
           },
           "legend": {
-            "orient": "bottom-right",
-            "titleFontSize": 11,
-            "labelFontSize": 11,
-            "symbolSize": 80
+            "orient": "bottom",
+            "titleFontSize": 10,
+            "labelFontSize": 10,
+            "symbolSize": 60,
+            "offset": 8,
+            "columns": 4
           }
         },
         "tooltip": [
@@ -131,5 +133,6 @@
         ]
       }
     }
-  ]
+  ],
+  "padding": 0
 }
