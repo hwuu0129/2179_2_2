@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Share of Fire Detections by Australian State",
-    "subtitle": "Percentage contribution of each state to annual fire detections, 2014\u20132024",
+    "subtitle": "Percentage contribution of each state to annual fire detections, 2014–2024",
     "fontSize": 15,
     "subtitleFontSize": 11,
     "fontWeight": "bold",
@@ -12,23 +12,15 @@
   "width": 360,
   "height": 300,
   "data": {
-    "url": "https://hwuu0129.github.io/2179_2_2/data/australia_state_year_2014_2024.csv"
+    "url": "https://hwuu0129.github.io/2179_2_2/data/australia_state_year_2014_2024_fixed.csv"
   },
-  "mark": {
-    "type": "bar",
-    "width": {
-      "band": 0.85
-    }
-  },
+  "mark": {"type": "bar", "width": {"band": 0.85}},
   "encoding": {
     "x": {
       "field": "year",
       "type": "ordinal",
       "title": "Year",
-      "axis": {
-        "labelAngle": 0,
-        "labelFontSize": 11
-      }
+      "axis": {"labelAngle": 0, "labelFontSize": 11}
     },
     "y": {
       "aggregate": "sum",
@@ -36,11 +28,7 @@
       "type": "quantitative",
       "title": "Share of fire detections (%)",
       "stack": "normalize",
-      "axis": {
-        "format": "%",
-        "labelFontSize": 11,
-        "titleFontSize": 12
-      }
+      "axis": {"format": "%", "labelFontSize": 11, "titleFontSize": 12}
     },
     "color": {
       "field": "STATE_NAME",
@@ -48,14 +36,14 @@
       "title": "State",
       "scale": {
         "domain": [
-          "Northern Territory",
-          "Queensland",
-          "Western Australia",
-          "New South Wales",
-          "Victoria",
-          "South Australia",
-          "Tasmania",
-          "Australian Capital Territory"
+          "NT",
+          "QLD",
+          "WA",
+          "NSW",
+          "VIC",
+          "SA",
+          "TAS",
+          "ACT"
         ],
         "range": [
           "#d62728",
@@ -78,16 +66,8 @@
       }
     },
     "tooltip": [
-      {
-        "field": "STATE_NAME",
-        "type": "nominal",
-        "title": "State"
-      },
-      {
-        "field": "year",
-        "type": "ordinal",
-        "title": "Year"
-      },
+      {"field": "STATE_NAME", "type": "nominal", "title": "State"},
+      {"field": "year", "type": "ordinal", "title": "Year"},
       {
         "aggregate": "sum",
         "field": "total_fire",
