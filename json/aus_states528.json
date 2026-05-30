@@ -10,7 +10,7 @@
     "offset": 0
   },
   "width": 400,
-  "height": 300,
+  "height": 400,
   "projection": {"type": "mercator", "center": [134, -28], "scale": 450},
   "layer": [
     {
@@ -40,7 +40,7 @@
           "legend": {
             "orient": "none",
             "legendX": 150,
-            "legendY": 300,
+            "legendY": 350,
             "direction": "horizontal",
             "titleFontSize": 10,
             "labelFontSize": 10
