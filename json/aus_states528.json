@@ -9,7 +9,7 @@
     "anchor": "middle",
     "offset": 0
   },
-  "width": 430,
+  "width": 410,
   "height": 400,
   "projection": {"type": "mercator", "center": [134, -28], "scale": 450},
   "layer": [
