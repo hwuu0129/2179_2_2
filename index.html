@@ -207,6 +207,12 @@
       line-height: 1.7;
     }
 
+    .chart-box.bg-page {
+      background: #f7f5f0;
+      box-shadow: none;
+      border-bottom: none;
+    }
+
     /* ── Divider ── */
     .divider {
       border: none;
@@ -279,7 +285,7 @@
 
   <!-- global_fire — full width -->
   <div class="chart-full">
-    <div class="chart-box">
+    <div class="chart-box bg-page">
       <div id="global_fire"></div>
       <script>vegaEmbed("#global_fire", "json/global_fire.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
@@ -384,7 +390,7 @@
 
   <!-- Row 2: aus_trend left, text right -->
   <div class="chart-text-row">
-    <div class="chart-box">
+    <div class="chart-box bg-page">
       <div id="aus_trend"></div>
       <script>vegaEmbed("#aus_trend", "json/aus_trend.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
@@ -452,7 +458,7 @@
 
   <!-- rainfall_multiline full width -->
   <div class="chart-full">
-    <div class="chart-box">
+    <div class="chart-box bg-page">
       <div id="rainfall_multiline"></div>
       <script>vegaEmbed("#rainfall_multiline", "json/rainfall_by_state_multiline.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
