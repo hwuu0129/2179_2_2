@@ -2,10 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Annual Rainfall by Australian State/Territory (2014\u20132024)",
-    "subtitle": "Area-averaged rainfall (mm) with Black Summer reference"
+    "subtitle": "Area-averaged rainfall (mm) with Black Summer reference",
+    "anchor": "middle"
   },
-  "width": 700,
-  "height": 420,
+  "width": 820,
+  "height": 400,
   "layer": [
     {
       "data": {
@@ -115,12 +116,17 @@
       "titleFontSize": 12
     },
     "legend": {
-      "labelFontSize": 11,
-      "titleFontSize": 12
+      "labelFontSize": 10,
+      "titleFontSize": 10,
+      "orient": "bottom",
+      "symbolSize": 60,
+      "offset": 8,
+      "columns": 4
     },
     "title": {
       "fontSize": 16,
       "subtitleFontSize": 12
     }
-  }
+  },
+  "padding": 0
 }
