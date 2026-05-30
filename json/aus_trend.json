@@ -2,10 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Australia Fire Detections Over Time (2014\u20132024)",
-    "subtitle": "Total active fire detections aggregated from NASA FIRMS gridded data"
+    "subtitle": "Total active fire detections aggregated from NASA FIRMS gridded data",
+    "anchor": "middle"
   },
-  "width": 420,
-  "height": 320,
+  "width": 360,
+  "height": 300,
   "data": {
     "url": "https://hwuu0129.github.io/2179_2_2/data/australia_yearly_fire_2014_2024.csv"
   },
@@ -57,5 +58,6 @@
         "title": "Grid cells"
       }
     ]
-  }
+  },
+  "padding": 0
 }
