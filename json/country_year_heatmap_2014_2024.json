@@ -3,7 +3,12 @@
   "title": {
     "text": "Country-Year Fire Detection Heatmap (2014\u20132024)",
     "subtitle": "Top 10 countries by total active fire detections in NASA FIRMS gridded data",
-    "anchor": "middle"
+      "fontSize": 15,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "offset": 10
+
   },
   "width": 360,
   "height": 300,
@@ -19,30 +24,31 @@
     "x": {
       "field": "year",
       "type": "ordinal",
-      "title": "Year"
+      "title": ""
     },
     "y": {
       "field": "country",
       "type": "nominal",
-      "title": "Country",
+      "title": "",
       "sort": "-x"
     },
     "color": {
       "field": "total_fire_count",
       "type": "quantitative",
-      "title": "Fire detections",
+      "title": "",
       "scale": {
         "scheme": "orangered"
       },
-      "legend": {
-        "format": "~s",
-        "orient": "bottom",
-        "labelFontSize": 10,
-        "titleFontSize": 10,
-        "symbolSize": 60,
-        "offset": 8,
-        "columns": 4
-      }
+    "legend": {
+  "format": "~s",
+  "orient": "bottom",
+  "labelFontSize": 10,
+  "titleFontSize": 10,
+  "offset": 8,
+  "direction": "horizontal",
+  "gradientLength": 200,
+  "gradientThickness": 10
+}
     },
     "tooltip": [
       {
@@ -83,5 +89,6 @@
       "columns": 4
     }
   },
-  "padding": 0
+  "padding": 0,
+  "background": "#f7f5f0"
 }
