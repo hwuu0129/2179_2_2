@@ -6,7 +6,7 @@
     "anchor": "middle"
   },
   "width": 820,
-  "height": 400,
+  "height": 380,
   "projection": {
     "type": "equalEarth"
   },
@@ -60,23 +60,25 @@
         "strokeWidth": 0.5
       },
       "encoding": {
-        "color": {
-          "field": "total_fire_count",
-          "type": "quantitative",
-          "title": "Fire detections",
-          "scale": {
-            "scheme": "orangered"
-          },
-          "legend": {
-            "format": "~s",
-            "orient": "bottom",
-            "labelFontSize": 10,
-            "titleFontSize": 10,
-            "symbolSize": 60,
-            "offset": 8,
-            "columns": 4
-          }
-        },
+       "color": {
+  "field": "total_fire_count",
+  "type": "quantitative",
+  "title": "",
+  "scale": {
+    "scheme": "orangered"
+  },
+  "legend": {
+    "format": "~s",
+    "orient": "none",
+    "legendX": 280,
+    "legendY": 390,
+    "direction": "horizontal",
+    "gradientLength": 260,
+    "gradientThickness": 12,
+    "labelFontSize": 10,
+    "title": null
+  }
+},
         "tooltip": [
           {
             "field": "country",
@@ -121,5 +123,6 @@
       "columns": 4
     }
   },
-  "padding": 0
+  "padding": 0,
+  "background": "#f7f5f0"
 }
