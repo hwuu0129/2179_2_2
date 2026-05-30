@@ -84,5 +84,6 @@
     "subtitleFontSize": 12
   }
 },
-  "padding": 0
+  "padding": 0,
+  "background": "#f7f5f0"
 }
