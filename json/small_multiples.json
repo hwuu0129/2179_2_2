@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Annual Bushfire Detections by State/Territory (2014\u20132024)",
+    "text": "Annual Bushfire Detections by State/Territory (2014–2024)",
     "fontSize": 15,
     "fontWeight": "bold",
     "anchor": "middle",
@@ -11,9 +11,7 @@
     "url": "https://hwuu0129.github.io/2179_2_2/data/australia_state_year_2014_2024.csv"
   },
   "transform": [
-    {
-      "filter": "datum.STATE_NAME != null && datum.year != null"
-    },
+    {"filter": "datum.STATE_NAME != null && datum.year != null"},
     {
       "filter": "indexof(['New South Wales','Victoria','Queensland','Western Australia','South Australia','Northern Territory','Tasmania','Australian Capital Territory'], datum.STATE_NAME) >= 0"
     }
@@ -30,16 +28,13 @@
   },
   "columns": 4,
   "spec": {
-    "width": 140,
-    "height": 100,
+    "width": 200,
+    "height": 120,
     "layer": [
       {
         "mark": {
           "type": "area",
-          "line": {
-            "color": "#e63946",
-            "strokeWidth": 1.8
-          },
+          "line": {"color": "#e63946", "strokeWidth": 1.8},
           "color": "#e63946",
           "opacity": 0.12
         },
@@ -51,14 +46,7 @@
               "labelAngle": -45,
               "labelFontSize": 9,
               "title": null,
-              "values": [
-                "2014",
-                "2016",
-                "2018",
-                "2020",
-                "2022",
-                "2024"
-              ]
+              "values": ["2014", "2016", "2018", "2020", "2022", "2024"]
             }
           },
           "y": {
@@ -70,9 +58,7 @@
               "format": "~s",
               "tickCount": 3
             },
-            "scale": {
-              "zero": true
-            }
+            "scale": {"zero": true}
           }
         }
       },
@@ -81,32 +67,14 @@
           "type": "line",
           "color": "#e63946",
           "strokeWidth": 1.8,
-          "point": {
-            "filled": true,
-            "size": 25,
-            "color": "#e63946"
-          }
+          "point": {"filled": true, "size": 25, "color": "#e63946"}
         },
         "encoding": {
-          "x": {
-            "field": "year",
-            "type": "ordinal"
-          },
-          "y": {
-            "field": "total_fire",
-            "type": "quantitative"
-          },
+          "x": {"field": "year", "type": "ordinal"},
+          "y": {"field": "total_fire", "type": "quantitative"},
           "tooltip": [
-            {
-              "field": "STATE_NAME",
-              "type": "nominal",
-              "title": "State"
-            },
-            {
-              "field": "year",
-              "type": "ordinal",
-              "title": "Year"
-            },
+            {"field": "STATE_NAME", "type": "nominal", "title": "State"},
+            {"field": "year", "type": "ordinal", "title": "Year"},
             {
               "field": "total_fire",
               "type": "quantitative",
@@ -124,10 +92,6 @@
       }
     ]
   },
-  "resolve": {
-    "scale": {
-      "y": "shared"
-    }
-  },
+  "resolve": {"scale": {"y": "shared"}},
   "padding": 0
 }
