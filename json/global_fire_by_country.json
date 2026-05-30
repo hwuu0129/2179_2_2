@@ -18,7 +18,7 @@
     "x": {
       "field": "fire_count",
       "type": "quantitative",
-      "title": "Number of Fire Detections"
+      "title": ""
     },
     "y": {
       "field": "country",
@@ -46,5 +46,6 @@
       }
     ]
   },
-  "padding": 0
+  "padding": 0,
+  "background": "#f7f5f0"
 }
