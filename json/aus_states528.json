@@ -10,7 +10,7 @@
     "offset": 0
   },
   "width": 410,
-  "height": 400,
+  "height": 390,
   "projection": {"type": "mercator", "center": [134, -28], "scale": 450},
   "layer": [
     {
