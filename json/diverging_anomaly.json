@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 350,
+  "width": 375,
   "height": 300,
   "title": {
     "text": "Bushfire & Rainfall Deviation",
