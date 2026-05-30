@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 420,
-  "height": 320,
+  "width": 360,
+  "height": 300,
   "title": {
     "text": "Australia: Bushfire & Rainfall Deviation from Average (2014\u20132024)",
     "subtitle": "Percentage deviation from 11-year mean. Fire data: NASA FIRMS. Rainfall: Bureau of Meteorology.",
     "fontSize": 14,
     "subtitleFontSize": 10,
     "fontWeight": "bold",
-    "anchor": "start",
+    "anchor": "middle",
     "offset": 10
   },
   "data": {
@@ -161,5 +161,6 @@
         ]
       }
     }
-  ]
+  ],
+  "padding": 0
 }
