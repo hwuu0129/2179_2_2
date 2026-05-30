@@ -3,7 +3,12 @@
   "title": {
     "text": "Australia Fire Detections Over Time (2014–2024)",
     "subtitle": "Total active fire detections aggregated from NASA FIRMS gridded data",
-    "anchor": "middle"
+     "fontSize": 15,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "offset": 10
+
   },
   "width": 375,
   "height": 320,
