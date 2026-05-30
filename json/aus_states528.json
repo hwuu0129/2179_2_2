@@ -4,8 +4,8 @@
     "text": "Bushfire Detections by State",
     "subtitle": "2024 (NASA VIIRS)"
   },
-  "width": 600,
-  "height": 400,
+  "width": 420,
+  "height": 380,
   "projection": {
     "type": "mercator",
     "center": [
