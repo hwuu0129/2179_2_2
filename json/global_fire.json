@@ -2,10 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Global Active Fire Detections by Country",
-    "subtitle": "NASA VIIRS fire detections, 6\u201315 May 2026"
+    "subtitle": "NASA VIIRS fire detections, 6\u201315 May 2026",
+    "anchor": "middle"
   },
-  "width": 700,
-  "height": 420,
+  "width": 820,
+  "height": 400,
   "projection": {
     "type": "equalEarth"
   },
@@ -67,7 +68,13 @@
             "scheme": "orangered"
           },
           "legend": {
-            "format": "~s"
+            "format": "~s",
+            "orient": "bottom",
+            "labelFontSize": 10,
+            "titleFontSize": 10,
+            "symbolSize": 60,
+            "offset": 8,
+            "columns": 4
           }
         },
         "tooltip": [
@@ -106,8 +113,13 @@
       "subtitleFontSize": 12
     },
     "legend": {
-      "labelFontSize": 11,
-      "titleFontSize": 12
+      "labelFontSize": 10,
+      "titleFontSize": 10,
+      "orient": "bottom",
+      "symbolSize": 60,
+      "offset": 8,
+      "columns": 4
     }
-  }
+  },
+  "padding": 0
 }
