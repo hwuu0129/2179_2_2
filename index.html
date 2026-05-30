@@ -23,6 +23,7 @@
       line-height: 1.7;
     }
 
+    /* ── Hero ── */
     .hero {
       background: #1a1a1a;
       color: #fff;
@@ -52,12 +53,14 @@
       font-weight: 300;
     }
 
+    /* ── Container ── */
     .container {
       max-width: 960px;
       margin: 0 auto;
       padding: 0 30px;
     }
 
+    /* ── Chapter header ── */
     .chapter {
       margin: 70px 0 36px;
       padding-left: 18px;
@@ -85,6 +88,7 @@
       font-weight: 300;
     }
 
+    /* ── Full width chart ── */
     .chart-full {
       margin: 40px 0;
     }
@@ -109,6 +113,7 @@
       font-style: italic;
     }
 
+    /* ── 2x2 Grid ── */
     .grid-2x2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -144,6 +149,7 @@
       border-left: 2px solid #ddd;
     }
 
+    /* ── Two columns (side by side) ── */
     .grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -167,6 +173,7 @@
       overflow: hidden;
     }
 
+    /* ── Left chart, right text ── */
     .chart-text-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -198,12 +205,14 @@
       line-height: 1.7;
     }
 
+    /* ── Divider ── */
     .divider {
       border: none;
       border-top: 1px solid #ddd;
       margin: 60px 0 0;
     }
 
+    /* ── Section label above chart ── */
     .chart-label {
       font-size: 1.0em;
       font-weight: 600;
@@ -211,6 +220,7 @@
       margin-bottom: 8px;
     }
 
+    /* ── Footer ── */
     footer {
       background: #1a1a1a;
       color: #aaa;
@@ -240,6 +250,7 @@
 
 <body>
 
+<!-- ── Hero ── -->
 <div class="hero">
   <p class="hero-eyebrow">FIT2179 Data Visualisation — Monash University</p>
   <h1>Australia on Fire</h1>
@@ -251,7 +262,9 @@
 
 <div class="container">
 
-  <!-- CHAPTER 1 -->
+  <!-- ════════════════════════════════
+       CHAPTER 1 — GLOBAL OVERVIEW
+  ════════════════════════════════ -->
   <div class="chapter">
     <p class="chapter-label">Chapter 1</p>
     <h2 class="chapter-title">A Global Problem</h2>
@@ -262,10 +275,11 @@
     </p>
   </div>
 
+  <!-- global_fire — full width -->
   <div class="chart-full">
     <div class="chart-box">
       <div id="global_fire"></div>
-      <script>vegaEmbed("#global_fire", "json/global_fire.json", {actions: true}).catch(console.error);</script>
+      <script>vegaEmbed("#global_fire", "json/global_fire.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
     <p class="chart-caption">
       Active fire detections were unevenly distributed across the world from 6–15 May 2026.
@@ -275,12 +289,14 @@
     </p>
   </div>
 
+  <!-- 2x2 grid -->
   <div class="grid-2x2">
 
+    <!-- Top left: global_fire_by_country -->
     <div class="grid-cell">
       <div class="chart-box">
         <div id="global_fire_by_country"></div>
-        <script>vegaEmbed("#global_fire_by_country", "json/global_fire_by_country.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#global_fire_by_country", "json/global_fire_by_country.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption">
         Australia recorded the highest number of high-confidence fire detections in 2026,
@@ -289,10 +305,11 @@
       </p>
     </div>
 
+    <!-- Top right: global_trend -->
     <div class="grid-cell">
       <div class="chart-box">
         <div id="global_trend"></div>
-        <script>vegaEmbed("#global_trend", "json/global_trend.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#global_trend", "json/global_trend.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption">
         Global fire detections fluctuated between 2014 and 2024, with no steady upward or
@@ -301,10 +318,11 @@
       </p>
     </div>
 
+    <!-- Bottom left: country_year_heatmap -->
     <div class="grid-cell">
       <div class="chart-box">
         <div id="country_heatmap"></div>
-        <script>vegaEmbed("#country_heatmap", "json/country_year_heatmap_2014_2024.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#country_heatmap", "json/country_year_heatmap_2014_2024.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption">
         The heatmap shows that fire activity was consistently high in the Democratic Republic
@@ -313,10 +331,11 @@
       </p>
     </div>
 
+    <!-- Bottom right: country_dumbbell -->
     <div class="grid-cell">
       <div class="chart-box">
         <div id="country_dumbbell"></div>
-        <script>vegaEmbed("#country_dumbbell", "json/country_dumbbell_2014_2024.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#country_dumbbell", "json/country_dumbbell_2014_2024.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption">
         Fire detections changed unevenly between 2014 and 2024. Brazil and Angola increased,
@@ -333,7 +352,9 @@
 
   <hr class="divider">
 
-  <!-- CHAPTER 2 -->
+  <!-- ════════════════════════════════════════
+       CHAPTER 2 — AUSTRALIA: A DECADE
+  ════════════════════════════════════════ -->
   <div class="chapter">
     <p class="chapter-label">Chapter 2</p>
     <h2 class="chapter-title">Australia: A Decade of Bushfires (2014–2024)</h2>
@@ -344,45 +365,50 @@
     </p>
   </div>
 
+  <!-- Row 1: aus_states528 + stacked_bar side by side -->
   <div class="grid-2col">
     <div class="col">
       <div class="chart-box">
         <div id="aus_map"></div>
-        <script>vegaEmbed("#aus_map", "json/aus_states528.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#aus_map", "json/aus_states528.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption placeholder">[ Text to be added ]</p>
     </div>
     <div class="col">
       <div class="chart-box">
         <div id="stacked_bar"></div>
-        <script>vegaEmbed("#stacked_bar", "json/australia_state_share_stacked_bar.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#stacked_bar", "json/australia_state_share_stacked_bar.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption placeholder">[ Text to be added ]</p>
     </div>
   </div>
 
+  <!-- Row 2: aus_trend left, text right -->
   <div class="chart-text-row">
     <div class="chart-box">
       <div id="aus_trend"></div>
-      <script>vegaEmbed("#aus_trend", "json/aus_trend.json", {actions: true}).catch(console.error);</script>
+      <script>vegaEmbed("#aus_trend", "json/aus_trend.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
     <div class="text-side">
       <h3>Australia Fire Detections Over Time (2014–2024)</h3>
-      <p style="color:#bbb;font-style:italic;">[ Text to be added ]</p>
+      <p class="placeholder" style="color:#bbb;font-style:italic;">[ Text to be added ]</p>
     </div>
   </div>
 
+  <!-- Row 3: small_multiples full width -->
   <div class="chart-full">
     <div class="chart-box">
       <div id="small_multiples"></div>
-      <script>vegaEmbed("#small_multiples", "json/small_multiples.json", {actions: true}).catch(console.error);</script>
+      <script>vegaEmbed("#small_multiples", "json/small_multiples.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
     <p class="chart-caption placeholder">[ Text to be added ]</p>
   </div>
 
   <hr class="divider">
 
-  <!-- CHAPTER 3 -->
+  <!-- ════════════════════════════════════════
+       CHAPTER 3 — CURRENT CONDITIONS
+  ════════════════════════════════════════ -->
   <div class="chapter">
     <p class="chapter-label">Chapter 3</p>
     <h2 class="chapter-title">Current Fire Conditions (2026)</h2>
@@ -392,18 +418,19 @@
     </p>
   </div>
 
+  <!-- bubble map + daily trend side by side -->
   <div class="grid-2col">
     <div class="col">
       <div class="chart-box">
         <div id="bubble_map"></div>
-        <script>vegaEmbed("#bubble_map", "json/dot_plot_aus.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#bubble_map", "json/dot_plot_aus.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption placeholder">[ Text to be added ]</p>
     </div>
     <div class="col">
       <div class="chart-box">
         <div id="daily_trend"></div>
-        <script>vegaEmbed("#daily_trend", "json/australia_fire_daily_trend.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#daily_trend", "json/australia_fire_daily_trend.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption placeholder">[ Text to be added ]</p>
     </div>
@@ -411,7 +438,9 @@
 
   <hr class="divider">
 
-  <!-- CHAPTER 4 -->
+  <!-- ════════════════════════════════════════
+       CHAPTER 4 — THE ROLE OF RAINFALL
+  ════════════════════════════════════════ -->
   <div class="chapter">
     <p class="chapter-label">Chapter 4</p>
     <h2 class="chapter-title">The Role of Rainfall</h2>
@@ -422,33 +451,36 @@
     </p>
   </div>
 
+  <!-- rainfall_multiline full width -->
   <div class="chart-full">
     <div class="chart-box">
       <div id="rainfall_multiline"></div>
-      <script>vegaEmbed("#rainfall_multiline", "json/rainfall_by_state_multiline.json", {actions: true}).catch(console.error);</script>
+      <script>vegaEmbed("#rainfall_multiline", "json/rainfall_by_state_multiline.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
     <p class="chart-caption placeholder">[ Text to be added ]</p>
   </div>
 
+  <!-- scatter + diverging side by side -->
   <div class="grid-2col">
     <div class="col">
       <div class="chart-box">
         <div id="scatter"></div>
-        <script>vegaEmbed("#scatter", "json/scatter_rainfall_fire.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#scatter", "json/scatter_rainfall_fire.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption placeholder">[ Text to be added ]</p>
     </div>
     <div class="col">
       <div class="chart-box">
         <div id="diverging"></div>
-        <script>vegaEmbed("#diverging", "json/diverging_anomaly.json", {actions: true}).catch(console.error);</script>
+        <script>vegaEmbed("#diverging", "json/diverging_anomaly.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption placeholder">[ Text to be added ]</p>
     </div>
   </div>
 
-</div>
+</div><!-- /container -->
 
+<!-- ── Footer ── -->
 <footer>
   <div class="footer-grid">
     <div>
