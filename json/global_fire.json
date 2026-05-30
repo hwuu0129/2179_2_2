@@ -2,22 +2,17 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Global Active Fire Detections by Country",
-    "subtitle": "NASA VIIRS fire detections, 6\u201315 May 2026",
+    "subtitle": "NASA VIIRS fire detections, 6–15 May 2026",
     "anchor": "middle"
   },
-  "width": 820,
+  "width": 850,
   "height": 380,
-  "projection": {
-    "type": "equalEarth"
-  },
+  "projection": {"type": "equalEarth"},
   "layer": [
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {
-          "type": "topojson",
-          "feature": "countries"
-        }
+        "format": {"type": "topojson", "feature": "countries"}
       },
       "mark": {
         "type": "geoshape",
@@ -29,10 +24,7 @@
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {
-          "type": "topojson",
-          "feature": "countries"
-        }
+        "format": {"type": "topojson", "feature": "countries"}
       },
       "transform": [
         {
@@ -42,54 +34,33 @@
               "url": "https://hwuu0129.github.io/2179_2_2/data/country_fire_2026_for_map.csv"
             },
             "key": "id",
-            "fields": [
-              "country",
-              "iso_a3",
-              "total_fire_count",
-              "avg_frp"
-            ]
+            "fields": ["country", "iso_a3", "total_fire_count", "avg_frp"]
           }
         },
-        {
-          "filter": "isValid(datum.total_fire_count)"
-        }
+        {"filter": "isValid(datum.total_fire_count)"}
       ],
-      "mark": {
-        "type": "geoshape",
-        "stroke": "white",
-        "strokeWidth": 0.5
-      },
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
       "encoding": {
-       "color": {
-  "field": "total_fire_count",
-  "type": "quantitative",
-  "title": "",
-  "scale": {
-    "scheme": "orangered"
-  },
-  "legend": {
-    "format": "~s",
-    "orient": "none",
-    "legendX": 280,
-    "legendY": 390,
-    "direction": "horizontal",
-    "gradientLength": 260,
-    "gradientThickness": 12,
-    "labelFontSize": 10,
-    "title": null
-  }
-},
+        "color": {
+          "field": "total_fire_count",
+          "type": "quantitative",
+          "title": "",
+          "scale": {"scheme": "orangered"},
+          "legend": {
+            "format": "~s",
+            "orient": "none",
+            "legendX": 280,
+            "legendY": 390,
+            "direction": "horizontal",
+            "gradientLength": 260,
+            "gradientThickness": 12,
+            "labelFontSize": 10,
+            "title": null
+          }
+        },
         "tooltip": [
-          {
-            "field": "country",
-            "type": "nominal",
-            "title": "Country"
-          },
-          {
-            "field": "iso_a3",
-            "type": "nominal",
-            "title": "ISO code"
-          },
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {"field": "iso_a3", "type": "nominal", "title": "ISO code"},
           {
             "field": "total_fire_count",
             "type": "quantitative",
@@ -107,13 +78,8 @@
     }
   ],
   "config": {
-    "view": {
-      "stroke": null
-    },
-    "title": {
-      "fontSize": 16,
-      "subtitleFontSize": 12
-    },
+    "view": {"stroke": null},
+    "title": {"fontSize": 16, "subtitleFontSize": 12},
     "legend": {
       "labelFontSize": 10,
       "titleFontSize": 10,
