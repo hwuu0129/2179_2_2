@@ -1,105 +1,72 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 375,
-  "height": 310,
+  "height": 305,
   "title": {
-    "text": "Rainfall vs Bushfire Detections (2014\u20132024)",
-  "subtitle": [
-  "Each point = one state in one year.",
-  "Triangle = 2019(Black Summer). Trend lines show strong correlations."
-],
+    "text": "Rainfall vs Bushfire Detections (2014–2024)",
+    "subtitle": [
+      "Each point = one state in one year.",
+      "Triangle = 2019(Black Summer). Trend lines show strong correlations."
+    ],
     "fontSize": 15,
     "subtitleFontSize": 11,
     "fontWeight": "bold",
     "anchor": "middle",
     "offset": 10
-
   },
   "data": {
     "url": "https://hwuu0129.github.io/2179_2_2/data/australia_fire_rainfall_scatter.csv"
   },
   "layer": [
     {
-      "mark": {
-        "type": "point",
-        "filled": true,
-        "opacity": 0.85,
-        "size": 80
-      },
+      "mark": {"type": "point", "filled": true, "opacity": 0.85, "size": 80},
       "encoding": {
         "x": {
           "field": "rainfall_mm",
           "type": "quantitative",
-          "axis": {
-            "title": "",
-            "format": "~s"
-          }
+          "axis": {"title": "", "format": "~s"}
         },
         "y": {
           "field": "fire_count",
           "type": "quantitative",
-          "axis": {
-            "title": "",
-            "format": "~s"
-          }
+          "axis": {"title": "", "format": "~s"}
         },
         "color": {
-  "field": "state",
-  "type": "nominal",
-  "scale": {
-    "domain": [
-      "NSW",
-      "VIC",
-      "QLD",
-      "WA",
-      "SA",
-      "NT"
-    ],
-    "range": [
-      "#1f77b4",
-      "#9467bd",
-      "#2ca02c",
-      "#ff7f0e",
-      "#8c564b",
-      "#d62728"
-    ]
-  },
-  "legend": {
-    "title": "",
-    "orient": "none",
-    "legendX": 32,
-    "legendY": 330,
-    "labelFontSize": 10,
-    "titleFontSize": 10,
-    "symbolSize": 60,
-    "columns": 6
-  }
-},
-        "shape": {
-          "condition": {
-            "test": "datum.year == '2019'",
-            "value": "triangle-up"
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": ["NSW", "VIC", "QLD", "WA", "SA", "NT"],
+            "range": [
+              "#1f77b4",
+              "#9467bd",
+              "#2ca02c",
+              "#ff7f0e",
+              "#8c564b",
+              "#d62728"
+            ]
           },
+          "legend": {
+            "title": "",
+            "orient": "none",
+            "legendX": 72,
+            "legendY": 330,
+            "labelFontSize": 10,
+            "titleFontSize": 10,
+            "symbolSize": 60,
+            "columns": 6
+          }
+        },
+        "shape": {
+          "condition": {"test": "datum.year == '2019'", "value": "triangle-up"},
           "value": "circle"
         },
         "size": {
-          "condition": {
-            "test": "datum.year == '2019'",
-            "value": 150
-          },
+          "condition": {"test": "datum.year == '2019'", "value": 150},
           "value": 70
         },
         "tooltip": [
-          {
-            "field": "state",
-            "type": "nominal",
-            "title": "State"
-          },
-          {
-            "field": "year",
-            "type": "ordinal",
-            "title": "Year"
-          },
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "year", "type": "ordinal", "title": "Year"},
           {
             "field": "rainfall_mm",
             "type": "quantitative",
@@ -122,127 +89,63 @@
       }
     },
     {
-      "transform": [
-        {
-          "filter": "datum.state == 'NSW'"
-        }
-      ],
+      "transform": [{"filter": "datum.state == 'NSW'"}],
       "mark": {
         "type": "line",
         "color": "#1f77b4",
-        "strokeDash": [
-          4,
-          3
-        ],
+        "strokeDash": [4, 3],
         "strokeWidth": 1.5,
         "opacity": 0.5
       },
       "encoding": {
-        "x": {
-          "field": "rainfall_mm",
-          "type": "quantitative"
-        },
-        "y": {
-          "field": "fire_count",
-          "type": "quantitative"
-        },
-        "order": {
-          "field": "rainfall_mm",
-          "type": "quantitative"
-        }
+        "x": {"field": "rainfall_mm", "type": "quantitative"},
+        "y": {"field": "fire_count", "type": "quantitative"},
+        "order": {"field": "rainfall_mm", "type": "quantitative"}
       }
     },
     {
-      "transform": [
-        {
-          "filter": "datum.state == 'SA'"
-        }
-      ],
+      "transform": [{"filter": "datum.state == 'SA'"}],
       "mark": {
         "type": "line",
         "color": "#8c564b",
-        "strokeDash": [
-          4,
-          3
-        ],
+        "strokeDash": [4, 3],
         "strokeWidth": 1.5,
         "opacity": 0.5
       },
       "encoding": {
-        "x": {
-          "field": "rainfall_mm",
-          "type": "quantitative"
-        },
-        "y": {
-          "field": "fire_count",
-          "type": "quantitative"
-        },
-        "order": {
-          "field": "rainfall_mm",
-          "type": "quantitative"
-        }
+        "x": {"field": "rainfall_mm", "type": "quantitative"},
+        "y": {"field": "fire_count", "type": "quantitative"},
+        "order": {"field": "rainfall_mm", "type": "quantitative"}
       }
     },
     {
-      "transform": [
-        {
-          "filter": "datum.state == 'VIC'"
-        }
-      ],
+      "transform": [{"filter": "datum.state == 'VIC'"}],
       "mark": {
         "type": "line",
         "color": "#9467bd",
-        "strokeDash": [
-          4,
-          3
-        ],
+        "strokeDash": [4, 3],
         "strokeWidth": 1.5,
         "opacity": 0.5
       },
       "encoding": {
-        "x": {
-          "field": "rainfall_mm",
-          "type": "quantitative"
-        },
-        "y": {
-          "field": "fire_count",
-          "type": "quantitative"
-        },
-        "order": {
-          "field": "rainfall_mm",
-          "type": "quantitative"
-        }
+        "x": {"field": "rainfall_mm", "type": "quantitative"},
+        "y": {"field": "fire_count", "type": "quantitative"},
+        "order": {"field": "rainfall_mm", "type": "quantitative"}
       }
     },
     {
-      "transform": [
-        {
-          "filter": "datum.state == 'WA'"
-        }
-      ],
+      "transform": [{"filter": "datum.state == 'WA'"}],
       "mark": {
         "type": "line",
         "color": "#ff7f0e",
-        "strokeDash": [
-          4,
-          3
-        ],
+        "strokeDash": [4, 3],
         "strokeWidth": 1.5,
         "opacity": 0.5
       },
       "encoding": {
-        "x": {
-          "field": "rainfall_mm",
-          "type": "quantitative"
-        },
-        "y": {
-          "field": "fire_count",
-          "type": "quantitative"
-        },
-        "order": {
-          "field": "rainfall_mm",
-          "type": "quantitative"
-        }
+        "x": {"field": "rainfall_mm", "type": "quantitative"},
+        "y": {"field": "fire_count", "type": "quantitative"},
+        "order": {"field": "rainfall_mm", "type": "quantitative"}
       }
     }
   ],
