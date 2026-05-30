@@ -19,32 +19,23 @@
     "x": {
       "field": "year",
       "type": "ordinal",
-      "title": "Year",
+      "title": "",
       "axis": {"labelAngle": 0, "labelFontSize": 11}
     },
     "y": {
       "aggregate": "sum",
       "field": "total_fire",
       "type": "quantitative",
-      "title": "Share of fire detections (%)",
+      "title": "",
       "stack": "normalize",
       "axis": {"format": "%", "labelFontSize": 11, "titleFontSize": 12}
     },
     "color": {
       "field": "STATE_NAME",
       "type": "nominal",
-      "title": "State",
+      "title": "",
       "scale": {
-        "domain": [
-          "NT",
-          "QLD",
-          "WA",
-          "NSW",
-          "VIC",
-          "SA",
-          "TAS",
-          "ACT"
-        ],
+        "domain": ["NT", "QLD", "WA", "NSW", "VIC", "SA", "TAS", "ACT"],
         "range": [
           "#d62728",
           "#ff7f0e",
@@ -62,7 +53,7 @@
         "titleFontSize": 10,
         "symbolSize": 60,
         "offset": 8,
-        "columns": 4
+        "columns": 8
       }
     },
     "tooltip": [
@@ -77,5 +68,6 @@
       }
     ]
   },
-  "padding": 0
+  "padding": 0,
+  "background": "#f7f5f0"
 }
