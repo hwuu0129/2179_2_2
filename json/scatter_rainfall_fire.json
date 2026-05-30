@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 320,
+  "width": 375,
   "height": 300,
   "title": {
     "text": "Rainfall vs Bushfire Detections (2014\u20132024)",
