@@ -43,7 +43,7 @@
   "legend": {
     "orient": "none",
     "legendX": 130,
-    "legendY": 315,
+    "legendY": 320,
     "titleFontSize": 10,
     "labelFontSize": 10,
     "symbolSize": 60,
@@ -59,7 +59,7 @@
   "legend": {
     "orient": "none",
     "legendX": 50,
-    "legendY": 315,
+    "legendY": 320,
     "titleFontSize": 5,
     "labelFontSize": 10,
     "gradientThickness": 5,
