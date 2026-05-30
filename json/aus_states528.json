@@ -1,130 +1,39 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Bushfire Detections by State",
-    "subtitle": "2024 (NASA VIIRS)",
-    "anchor": "middle"
+    "text": "Top 20 Countries by Bushfire Activity",
+    "subtitle": "Based on high-confidence fire detections (NASA VIIRS, 2026)",
+      "fontSize": 15,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "offset": 10
   },
   "width": 360,
-  "height": 340,
-  "projection": {
-    "type": "mercator",
-    "center": [
-      134,
-      -28
-    ],
-    "scale": 600
+  "height": 300,
+  "data": {
+    "url": "https://hwuu0129.github.io/2179_2_2/data/global_fire_by_country.csv"
   },
-  "layer": [
-    {
-      "data": {
-        "url": "https://hwuu0129.github.io/2179_2_2/data/australia_states.geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
+  "mark": {"type": "bar", "color": "#D95F02"},
+  "encoding": {
+    "x": {"field": "fire_count", "type": "quantitative", "title": ""},
+    "y": {"field": "country", "type": "nominal", "sort": "-x", "title": null},
+    "color": {
+      "condition": {
+        "test": "datum.country === 'Australia'",
+        "value": "#B22222"
       },
-      "transform": [
-        {
-          "lookup": "properties.STATE_NAME",
-          "from": {
-            "data": {
-              "url": "https://hwuu0129.github.io/2179_2_2/data/aus_states528.csv"
-            },
-            "key": "STATE_NAME",
-            "fields": [
-              "total_fire",
-              "avg_frp",
-              "grid_cells"
-            ]
-          }
-        }
-      ],
-      "mark": {
-        "type": "geoshape",
-        "stroke": "white",
-        "strokeWidth": 1
-      },
-      "encoding": {
-        "color": {
-          "field": "total_fire",
-          "type": "quantitative",
-          "scale": {
-            "scheme": "orangered"
-          },
-          "title": "Fire Detections"
-        },
-        "tooltip": [
-          {
-            "field": "properties.STATE_NAME",
-            "type": "nominal",
-            "title": "State"
-          },
-          {
-            "field": "total_fire",
-            "type": "quantitative",
-            "title": "Fire Count",
-            "format": ","
-          },
-          {
-            "field": "avg_frp",
-            "type": "quantitative",
-            "title": "Avg FRP"
-          },
-          {
-            "field": "grid_cells",
-            "type": "quantitative",
-            "title": "Grid Cells"
-          }
-        ]
-      }
+      "value": "#D95F02"
     },
-    {
-      "data": {
-        "url": "https://hwuu0129.github.io/2179_2_2/data/australia_states.geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
-      },
-      "transform": [
-        {
-          "filter": "datum.properties.STATE_NAME != 'Australian Capital Territory'"
-        },
-        {
-          "calculate": "geoCentroid(null, datum)",
-          "as": "centroid"
-        },
-        {
-          "calculate": "datum.centroid[0]",
-          "as": "cx"
-        },
-        {
-          "calculate": "datum.centroid[1]",
-          "as": "cy"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "fill": "black"
-      },
-      "encoding": {
-        "longitude": {
-          "field": "cx",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "cy",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "properties.STATE_NAME",
-          "type": "nominal"
-        }
+    "tooltip": [
+      {"field": "country", "type": "nominal", "title": "Country"},
+      {
+        "field": "fire_count",
+        "type": "quantitative",
+        "title": "Fire Detections"
       }
-    }
-  ],
-  "padding": 0
+    ]
+  },
+  "padding": 0,
+  "background": "#f7f5f0"
 }
