@@ -3,10 +3,15 @@
   "title": {
     "text": "Top 20 Countries by Bushfire Activity",
     "subtitle": "Based on high-confidence fire detections (NASA VIIRS, 2026)",
-    "anchor": "middle"
+      "fontSize": 15,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "offset": 10
+
   },
-  "width": 360,
-  "height": 300,
+  "width": 300,
+  "height": 320,
   "data": {
     "url": "https://hwuu0129.github.io/2179_2_2/data/global_fire_by_country.csv"
   },
