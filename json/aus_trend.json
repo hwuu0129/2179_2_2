@@ -1,63 +1,39 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Australia Fire Detections Over Time (2014\u20132024)",
+    "text": "Australia Fire Detections Over Time (2014–2024)",
     "subtitle": "Total active fire detections aggregated from NASA FIRMS gridded data",
     "anchor": "middle"
   },
-  "width": 360,
-  "height": 300,
+  "width": 375,
+  "height": 320,
   "data": {
     "url": "https://hwuu0129.github.io/2179_2_2/data/australia_yearly_fire_2014_2024.csv"
   },
-  "mark": {
-    "type": "line",
-    "point": true,
-    "strokeWidth": 3,
-    "color": "#e63946"
-  },
+  "mark": {"type": "line", "point": true, "strokeWidth": 3},
   "encoding": {
-    "x": {
-      "field": "year",
-      "type": "quantitative",
-      "title": "Year",
-      "axis": {
-        "format": "d"
-      }
-    },
-    "y": {
-      "field": "total_fire_count",
-      "type": "quantitative",
-      "title": "Fire detections",
-      "axis": {
-        "format": "~s"
-      }
-    },
-    "order": {
-      "field": "year",
-      "type": "quantitative"
-    },
-    "tooltip": [
-      {
-        "field": "year",
-        "title": "Year",
-        "format": "d"
-      },
-      {
-        "field": "total_fire_count",
-        "title": "Fire detections",
-        "format": ","
-      },
-      {
-        "field": "avg_frp",
-        "title": "Average FRP",
-        "format": ".2f"
-      },
-      {
-        "field": "grid_cells",
-        "title": "Grid cells"
-      }
-    ]
+  "x": {
+    "field": "year",
+    "type": "quantitative",
+    "title": "",
+    "axis": {
+      "format": "d",
+      "values": [2014, 2016, 2018, 2020, 2022, 2024]
+    }
   },
+  "y": {
+    "field": "total_fire_count",
+    "type": "quantitative",
+    "title": "",
+    "axis": {"format": "~s"}
+  },
+  "order": {"field": "year", "type": "quantitative"},
+  "tooltip": [
+    {"field": "year", "title": "Year", "format": "d"},
+    {"field": "total_fire_count", "title": "Fire detections", "format": ","},
+    {"field": "avg_frp", "title": "Average FRP", "format": ".2f"},
+    {"field": "grid_cells", "title": "Grid cells"}
+  ]
+},
   "padding": 0
 }
