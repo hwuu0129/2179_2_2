@@ -49,7 +49,7 @@
           "legend": {
             "format": "~s",
             "orient": "none",
-            "legendX": 280,
+            "legendX": 310,
             "legendY": 390,
             "direction": "horizontal",
             "gradientLength": 260,
