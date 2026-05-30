@@ -4,16 +4,15 @@
   "height": 300,
   "title": {
     "text": "Bushfire & Rainfall Deviation",
-"subtitle": [
-  "Australia, 2014–2024. % deviation from 11-year mean.",
-  "Fire: NASA FIRMS; rainfall: BOM."
-],
-     "fontSize": 15,
+    "subtitle": [
+      "Australia, 2014–2024. % deviation from 11-year mean.",
+      "Fire: NASA FIRMS; rainfall: BOM."
+    ],
+    "fontSize": 15,
     "subtitleFontSize": 11,
     "fontWeight": "bold",
     "anchor": "middle",
     "offset": 10
-
   },
   "data": {
     "url": "https://hwuu0129.github.io/2179_2_2/data/australia_fire_rainfall_anomaly.csv"
@@ -23,24 +22,12 @@
       "mark": {
         "type": "rule",
         "color": "#c0392b",
-        "strokeDash": [
-          5,
-          3
-        ],
+        "strokeDash": [5, 3],
         "strokeWidth": 1.2,
         "opacity": 0.6
       },
-      "transform": [
-        {
-          "filter": "datum.year == '2019'"
-        }
-      ],
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal"
-        }
-      }
+      "transform": [{"filter": "datum.year == '2019'"}],
+      "encoding": {"x": {"field": "year", "type": "ordinal"}}
     },
     {
       "mark": {
@@ -51,45 +38,16 @@
         "dy": -8,
         "text": "Black Summer"
       },
-      "transform": [
-        {
-          "filter": "datum.year == '2019'"
-        }
-      ],
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal"
-        },
-        "y": {
-          "value": 0
-        }
-      }
+      "transform": [{"filter": "datum.year == '2019'"}],
+      "encoding": {"x": {"field": "year", "type": "ordinal"}, "y": {"value": 0}}
     },
     {
-      "mark": {
-        "type": "rule",
-        "color": "#888",
-        "strokeWidth": 0.8
-      },
-      "encoding": {
-        "y": {
-          "datum": 0
-        }
-      }
+      "mark": {"type": "rule", "color": "#888", "strokeWidth": 0.8},
+      "encoding": {"y": {"datum": 0}}
     },
     {
       "transform": [
-        {
-          "fold": [
-            "fire_pct",
-            "rain_pct"
-          ],
-          "as": [
-            "metric",
-            "value"
-          ]
-        },
+        {"fold": ["fire_pct", "rain_pct"], "as": ["metric", "value"]},
         {
           "calculate": "datum.metric == 'fire_pct' ? 'Fire detections' : 'Rainfall'",
           "as": "label"
@@ -99,63 +57,35 @@
           "as": "bar_color"
         }
       ],
-      "mark": {
-        "type": "bar",
-        "width": {
-          "band": 0.38
-        }
-      },
+      "mark": {"type": "bar", "width": {"band": 0.38}},
       "encoding": {
         "x": {
           "field": "year",
           "type": "ordinal",
           "axis": {
             "labelAngle": 0,
+            "values": ["2014", "2016", "2018", "2020", "2022", "2024"],
             "title": ""
           }
         },
         "y": {
           "field": "value",
           "type": "quantitative",
-          "axis": {
-            "title": "",
-            "format": "+.0f"
-          }
+          "axis": {"title": "", "format": "+.0f"}
         },
-        "xOffset": {
-          "field": "metric",
-          "type": "nominal"
-        },
+        "xOffset": {"field": "metric", "type": "nominal"},
         "color": {
           "field": "bar_color",
           "type": "nominal",
           "scale": {
-            "domain": [
-              "#e07b39",
-              "#f5c6a0",
-              "#4393c3",
-              "#b8d4e8"
-            ],
-            "range": [
-              "#e07b39",
-              "#f5c6a0",
-              "#4393c3",
-              "#b8d4e8"
-            ]
+            "domain": ["#e07b39", "#f5c6a0", "#4393c3", "#b8d4e8"],
+            "range": ["#e07b39", "#f5c6a0", "#4393c3", "#b8d4e8"]
           },
           "legend": null
         },
         "tooltip": [
-          {
-            "field": "year",
-            "type": "ordinal",
-            "title": "Year"
-          },
-          {
-            "field": "label",
-            "type": "nominal",
-            "title": "Metric"
-          },
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "label", "type": "nominal", "title": "Metric"},
           {
             "field": "value",
             "type": "quantitative",
