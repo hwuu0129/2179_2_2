@@ -70,7 +70,7 @@
           "legend": {
             "orient": "none",
             "legendX": 80,
-            "legendY": 340,
+            "legendY": 350,
             "direction": "horizontal",
             "columns": 2,
             "titleFontSize": 10,
