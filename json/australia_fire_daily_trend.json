@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Daily Bushfire Detections in Australia",
-    "subtitle": "March \u2013 May 2026 (NASA VIIRS)",
+    "subtitle": "March – May 2026 (NASA VIIRS)",
     "fontSize": 15,
     "subtitleFontSize": 11,
     "fontWeight": "bold",
@@ -18,51 +18,30 @@
     {
       "mark": {
         "type": "area",
-        "line": {
-          "color": "#D95F02",
-          "strokeWidth": 2
-        },
-        "color": {
-          "expr": "'#D95F02'"
-        },
+        "line": {"color": "#D95F02", "strokeWidth": 2},
+        "color": {"expr": "'#D95F02'"},
         "opacity": 0.1
       },
       "encoding": {
         "x": {
           "field": "date",
           "type": "temporal",
-          "title": "Date",
-          "axis": {
-            "format": "%b %d",
-            "labelAngle": -30,
-            "tickCount": 10
-          }
+          "title": "",
+          "axis": {"format": "%b %d", "labelAngle": -30, "tickCount": 10}
         },
         "y": {
           "field": "fire_count",
           "type": "quantitative",
-          "title": "Number of Fire Detections",
-          "axis": {
-            "format": "~s"
-          }
+          "title": "",
+          "axis": {"format": "~s"}
         }
       }
     },
     {
-      "mark": {
-        "type": "line",
-        "color": "#D95F02",
-        "strokeWidth": 2
-      },
+      "mark": {"type": "line", "color": "#D95F02", "strokeWidth": 2},
       "encoding": {
-        "x": {
-          "field": "date",
-          "type": "temporal"
-        },
-        "y": {
-          "field": "fire_count",
-          "type": "quantitative"
-        },
+        "x": {"field": "date", "type": "temporal"},
+        "y": {"field": "fire_count", "type": "quantitative"},
         "tooltip": [
           {
             "field": "date",
@@ -88,29 +67,15 @@
         "opacity": 0.8
       },
       "encoding": {
-        "x": {
-          "field": "date",
-          "type": "temporal"
-        },
-        "y": {
-          "field": "fire_count",
-          "type": "quantitative"
-        }
+        "x": {"field": "date", "type": "temporal"},
+        "y": {"field": "fire_count", "type": "quantitative"}
       }
     },
     {
       "data": {
         "values": [
-          {
-            "date": "2026-04-15",
-            "fire_count": 8064,
-            "label": "Peak: 8,064"
-          },
-          {
-            "date": "2026-05-07",
-            "fire_count": 8154,
-            "label": "Peak: 8,154"
-          }
+          {"date": "2026-04-15", "fire_count": 8064, "label": "Peak: 8,064"},
+          {"date": "2026-05-07", "fire_count": 8154, "label": "Peak: 8,154"}
         ]
       },
       "mark": {
@@ -121,29 +86,15 @@
         "shape": "triangle-up"
       },
       "encoding": {
-        "x": {
-          "field": "date",
-          "type": "temporal"
-        },
-        "y": {
-          "field": "fire_count",
-          "type": "quantitative"
-        }
+        "x": {"field": "date", "type": "temporal"},
+        "y": {"field": "fire_count", "type": "quantitative"}
       }
     },
     {
       "data": {
         "values": [
-          {
-            "date": "2026-04-15",
-            "fire_count": 8064,
-            "label": "Peak: 8,064"
-          },
-          {
-            "date": "2026-05-07",
-            "fire_count": 8154,
-            "label": "Peak: 8,154"
-          }
+          {"date": "2026-04-15", "fire_count": 8064, "label": "Peak: 8,064"},
+          {"date": "2026-05-07", "fire_count": 8154, "label": "Peak: 8,154"}
         ]
       },
       "mark": {
@@ -154,17 +105,9 @@
         "fontWeight": "bold"
       },
       "encoding": {
-        "x": {
-          "field": "date",
-          "type": "temporal"
-        },
-        "y": {
-          "field": "fire_count",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "label"
-        }
+        "x": {"field": "date", "type": "temporal"},
+        "y": {"field": "fire_count", "type": "quantitative"},
+        "text": {"field": "label"}
       }
     }
   ],
