@@ -9,7 +9,7 @@
     "anchor": "middle",
     "offset": 10
   },
-  "width": 360,
+  "width": 380,
   "height": 300,
   "projection": {"type": "mercator", "center": [134, -28], "scale": 430},
   "layer": [
@@ -87,5 +87,6 @@
       }
     }
   ],
-  "padding": 0
+  "padding": 0,
+    "background": "#f7f5f0"
 }
