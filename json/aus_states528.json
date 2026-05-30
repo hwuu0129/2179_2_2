@@ -2,18 +2,19 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Bushfire Detections by State",
-    "subtitle": "2024 (NASA VIIRS)",
-    "anchor": "middle"
+    "subtitle": "2014-2024 (NASA VIIRS)",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "offset": 0
   },
-  "width": 360,
-  "height": 340,
+  "width": 400,
+  "height": 300,
   "projection": {
     "type": "mercator",
-    "center": [
-      134,
-      -28
-    ],
-    "scale": 600
+    "center": [134, -28],
+    "scale": 450
   },
   "layer": [
     {
@@ -32,11 +33,7 @@
               "url": "https://hwuu0129.github.io/2179_2_2/data/aus_states528.csv"
             },
             "key": "STATE_NAME",
-            "fields": [
-              "total_fire",
-              "avg_frp",
-              "grid_cells"
-            ]
+            "fields": ["total_fire", "avg_frp", "grid_cells"]
           }
         }
       ],
@@ -47,13 +44,21 @@
       },
       "encoding": {
         "color": {
-          "field": "total_fire",
-          "type": "quantitative",
-          "scale": {
-            "scheme": "orangered"
-          },
-          "title": "Fire Detections"
-        },
+  "field": "total_fire",
+  "type": "quantitative",
+  "scale": {
+    "scheme": "orangered"
+  },
+  "title": "Fire Detections",
+  "legend": {
+    "orient": "none",
+    "legendX": 150,
+    "legendY": 355,
+    "direction": "horizontal",
+    "titleFontSize": 10,
+    "labelFontSize": 10
+  }
+},
         "tooltip": [
           {
             "field": "properties.STATE_NAME",
@@ -106,7 +111,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 11,
+        "fontSize": 8,
         "fontWeight": "bold",
         "fill": "black"
       },
@@ -126,6 +131,5 @@
       }
     }
   ],
-  "padding": 0,
-  "background": "#f7f5f0"
+  "padding": 0
 }
