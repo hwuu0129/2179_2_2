@@ -35,7 +35,7 @@
           "type": "nominal",
           "sort": {"field": "fire_2024", "order": "descending"},
           "title": null,
-          "axis": {"labelFontSize": 12}
+          "axis": {"labelFontSize": 11}
         },
         "x": {
           "field": "fire_2014",
@@ -60,24 +60,24 @@
           "axis": {"format": "~s"}
         },
         "color": {
-  "field": "year_label",
-  "type": "nominal",
-  "title": "",
-  "scale": {
-    "domain": ["2014", "2024"],
-    "range": ["#fdae6b", "#d62728"]
-  },
-  "legend": {
-    "orient": "none",
-    "legendX": 70,
-    "legendY": 340,
-    "direction": "horizontal",
-    "columns": 2,
-    "titleFontSize": 10,
-    "labelFontSize": 10,
-    "symbolSize": 60
-  }
-},
+          "field": "year_label",
+          "type": "nominal",
+          "title": "",
+          "scale": {
+            "domain": ["2014", "2024"],
+            "range": ["#fdae6b", "#d62728"]
+          },
+          "legend": {
+            "orient": "none",
+            "legendX": 80,
+            "legendY": 340,
+            "direction": "horizontal",
+            "columns": 2,
+            "titleFontSize": 10,
+            "labelFontSize": 10,
+            "symbolSize": 60
+          }
+        },
         "tooltip": [
           {"field": "country", "title": "Country"},
           {"field": "year_label", "title": "Year"},
