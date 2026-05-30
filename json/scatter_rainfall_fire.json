@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 420,
-  "height": 320,
+  "width": 360,
+  "height": 300,
   "title": {
     "text": "Rainfall vs Bushfire Detections by Australian State (2014\u20132024)",
     "subtitle": "Each point = one state in one year. Triangle = 2019 (Black Summer). Trend lines shown for states with strong correlation.",
     "fontSize": 14,
     "subtitleFontSize": 10,
     "fontWeight": "bold",
-    "anchor": "start",
+    "anchor": "middle",
     "offset": 10
   },
   "data": {
@@ -62,7 +62,12 @@
           },
           "legend": {
             "title": "State",
-            "orient": "right"
+            "orient": "bottom",
+            "labelFontSize": 10,
+            "titleFontSize": 10,
+            "symbolSize": 60,
+            "offset": 8,
+            "columns": 4
           }
         },
         "shape": {
@@ -235,5 +240,6 @@
         }
       }
     }
-  ]
+  ],
+  "padding": 0
 }
