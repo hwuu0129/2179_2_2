@@ -3,7 +3,12 @@
   "title": {
     "text": "Global Active Fire Detections by Country",
     "subtitle": "NASA VIIRS fire detections, 6–15 May 2026",
-    "anchor": "middle"
+      "fontSize": 15,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "offset": 10
+
   },
   "width": 855,
   "height": 380,
