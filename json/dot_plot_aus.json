@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Fire Intensity Across Australia",
-    "subtitle": "Fire Radiative Power (FRP) from NASA VIIRS \u2014 2024",
+    "subtitle": "Fire Radiative Power (FRP) from NASA VIIRS — 2024",
     "fontSize": 15,
     "subtitleFontSize": 11,
     "fontWeight": "bold",
@@ -10,23 +10,13 @@
     "offset": 10
   },
   "width": 360,
-  "height": 340,
-  "projection": {
-    "type": "mercator",
-    "center": [
-      134,
-      -28
-    ],
-    "scale": 550
-  },
+  "height": 300,
+  "projection": {"type": "mercator", "center": [134, -28], "scale": 430},
   "layer": [
     {
       "data": {
         "url": "https://hwuu0129.github.io/2179_2_2/data/australia_states.geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
+        "format": {"type": "json", "property": "features"}
       },
       "mark": {
         "type": "geoshape",
@@ -36,36 +26,20 @@
       }
     },
     {
-      "data": {
-        "url": "https://hwuu0129.github.io/2179_2_2/data/fire.csv"
-      },
+      "data": {"url": "https://hwuu0129.github.io/2179_2_2/data/fire.csv"},
       "transform": [
         {
           "filter": "datum.latitude > -44 && datum.latitude < -10 && datum.longitude > 112 && datum.longitude < 154"
         }
       ],
-      "mark": {
-        "type": "circle",
-        "opacity": 0.6
-      },
+      "mark": {"type": "circle", "opacity": 0.6},
       "encoding": {
-        "longitude": {
-          "field": "longitude",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "latitude",
-          "type": "quantitative"
-        },
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {
           "field": "frp",
           "type": "quantitative",
-          "scale": {
-            "range": [
-              10,
-              600
-            ]
-          },
+          "scale": {"range": [10, 600]},
           "legend": {
             "orient": "bottom",
             "titleFontSize": 10,
@@ -79,19 +53,18 @@
         "color": {
           "field": "frp",
           "type": "quantitative",
-          "title": "Fire Intensity (FRP)",
-          "scale": {
-            "scheme": "reds"
-          },
+          "title": "",
+          "scale": {"scheme": "reds"},
           "legend": {
             "orient": "bottom",
-            "titleFontSize": 10,
+            "titleFontSize": 5,
             "labelFontSize": 10,
-            "gradientThickness": 8,
+            "gradientThickness": 5,
             "padding": 4,
             "offset": 8,
-            "symbolSize": 60,
-            "columns": 4
+            "symbolSize": 10,
+            "columns": 5
+            
           }
         },
         "tooltip": [
@@ -107,21 +80,9 @@
             "format": ".2f",
             "title": "Longitude"
           },
-          {
-            "field": "frp",
-            "type": "quantitative",
-            "format": ".1f"
-          },
-          {
-            "field": "acq_date",
-            "type": "nominal",
-            "title": "Date"
-          },
-          {
-            "field": "confidence",
-            "type": "nominal",
-            "title": "Confidence"
-          }
+          {"field": "frp", "type": "quantitative", "format": ".1f"},
+          {"field": "acq_date", "type": "nominal", "title": "Date"},
+          {"field": "confidence", "type": "nominal", "title": "Confidence"}
         ]
       }
     }
