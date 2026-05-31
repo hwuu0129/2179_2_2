@@ -37,18 +37,20 @@
       "scale": {
         "domain": ["NT", "QLD", "WA", "NSW", "VIC", "SA", "TAS", "ACT"],
         "range": [
-          "#d62728",
-          "#ff7f0e",
-          "#2ca02c",
-          "#1f77b4",
-          "#9467bd",
-          "#8c564b",
-          "#e377c2",
-          "#7f7f7f"
+          "#D55E00",
+          "#009E73",
+          "#E69F00",
+          "#0072B2",
+          "#CC79A7",
+          "#56B4E9",
+          "#F0E442",
+          "#000000"
         ]
       },
       "legend": {
-        "orient": "bottom",
+        "orient": "none",
+        "legendX": 20,
+        "legendY": 345,
         "labelFontSize": 10,
         "titleFontSize": 10,
         "symbolSize": 60,
