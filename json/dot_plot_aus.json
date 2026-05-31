@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Fire Intensity Across Australia",
-    "subtitle": "Fire Radiative Power (FRP) from NASA VIIRS — 2024",
+    "subtitle": "Fire Radiative Power (FRP) from NASA VIIRS — 2026",
     "fontSize": 15,
     "subtitleFontSize": 11,
     "fontWeight": "bold",
