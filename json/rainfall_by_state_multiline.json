@@ -28,7 +28,20 @@
         "color": {
           "field": "state",
           "type": "nominal",
-          "title": ""
+          "title": "",
+          "scale": {
+            "domain": ["NT", "QLD", "WA", "NSW", "VIC", "SA"],
+            "range": [
+              "#D55E00",
+              "#009E73",
+              "#E69F00",
+              "#0072B2",
+              "#CC79A7",
+              "#56B4E9",
+              "#F0E442",
+              "#000000"
+            ]
+          }
         },
         "tooltip": [
           {"field": "state", "title": "State"},
