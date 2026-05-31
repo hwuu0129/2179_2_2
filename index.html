@@ -291,9 +291,7 @@
     </div>
     <p class="chart-caption">
       Active fire detections were unevenly distributed across the world from 6–15 May 2026.
-      Australia recorded the highest fire activity, while India, Russia, Angola, Mexico and
-      China also showed high numbers of detections. Many countries in Europe, North Africa
-      and South America had relatively low fire activity.
+      Australia stood out as the most fire-affected country, while India, Russia, Angola and Mexico also recorded high numbers. Europe and North Africa remained relatively calm.
     </p>
   </div>
 
@@ -307,9 +305,7 @@
         <script>vegaEmbed("#global_fire_by_country", "json/global_fire_by_country.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption">
-        Australia recorded the highest number of high-confidence fire detections in 2026,
-        followed by Russia, Mexico and India. The top countries show that bushfire activity
-        was highly concentrated in a small number of regions rather than evenly distributed worldwide.
+        Australia recorded almost twice as many fire detections as Russia, the second-ranked country. Bushfire risk is highly concentrated — the top four countries alone account for the majority of global fire activity.
       </p>
     </div>
 
@@ -320,9 +316,7 @@
         <script>vegaEmbed("#global_trend", "json/global_trend.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption">
-        Global fire detections fluctuated between 2014 and 2024, with no steady upward or
-        downward trend. The highest level occurred in 2023, followed by a sharp decline in
-        2024. This suggests that global fire activity varies strongly by year.
+        Global fire detections showed no clear long-term trend between 2014 and 2024. A dramatic spike in 2023 reached the highest level in a decade, followed by a sharp drop in 2024 — highlighting just how much fire activity can vary from year to year.
       </p>
     </div>
 
@@ -333,9 +327,7 @@
         <script>vegaEmbed("#country_heatmap", "json/country_year_heatmap_2014_2024.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption">
-        The heatmap shows that fire activity was consistently high in the Democratic Republic
-        of Congo and Brazil from 2014 to 2024. Australia and Canada show especially high fire
-        detections in 2023, suggesting that fire activity can vary sharply by country and year.
+        The Democratic Republic of Congo and Brazil show consistently high fire activity across all eleven years. Australia and Canada both spiked dramatically in 2023, showing that even countries with moderate fire history can experience extreme seasons.
       </p>
     </div>
 
@@ -346,11 +338,8 @@
         <script>vegaEmbed("#country_dumbbell", "json/country_dumbbell_2014_2024.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
       <p class="chart-caption">
-        Fire detections changed unevenly between 2014 and 2024. Brazil and Angola increased,
-        while the Democratic Republic of Congo, Bolivia and Indonesia showed large decreases.
-        This highlights strong country-level differences in long-term fire activity.
+        Fire activity shifted in opposite directions between 2014 and 2024. Brazil surged while the Democratic Republic of Congo declined sharply. These contrasting trends suggest that fire activity is shaped by local conditions rather than a single global cause.
       </p>
-
     </div>
 
   </div>
@@ -377,14 +366,18 @@
         <div id="aus_map"></div>
         <script>vegaEmbed("#aus_map", "json/aus_states528.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
-      <p class="chart-caption placeholder">[ Text to be added ]</p>
+      <p class="chart-caption">
+        The Northern Territory recorded far more fire detections than any other state over the past decade. Western Australia and Queensland also saw high activity, driven by vast areas of savanna. Southern states recorded fewer fires, though they tend to be more destructive when they occur.
+      </p>
     </div>
     <div class="col">
       <div class="chart-box">
         <div id="stacked_bar"></div>
         <script>vegaEmbed("#stacked_bar", "json/australia_state_share_stacked_bar.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
-      <p class="chart-caption placeholder">[ Text to be added ]</p>
+      <p class="chart-caption">
+        The Northern Territory and Western Australia typically account for over 70% of national fire detections each year. The biggest exception was 2019, when New South Wales surged dramatically during the Black Summer — a rare but devastating shift in where Australia's fires burned.
+      </p>
     </div>
   </div>
 
@@ -396,7 +389,7 @@
     </div>
     <div class="text-side">
       <h3>Australia Fire Detections Over Time (2014–2024)</h3>
-      <p class="placeholder" style="color:#bbb;font-style:italic;">[ Text to be added ]</p>
+      <p>Australia's fire activity has been volatile over the past decade. Detections peaked during the 2019 Black Summer, collapsed through 2020–2022 as La Niña brought wet conditions, then surged again in 2023 to a new record high — surpassing even the Black Summer.</p>
     </div>
   </div>
 
@@ -406,7 +399,9 @@
       <div id="small_multiples"></div>
       <script>vegaEmbed("#small_multiples", "json/small_multiples.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
-    <p class="chart-caption placeholder">[ Text to be added ]</p>
+    <p class="chart-caption">
+      The Northern Territory dominates, far exceeding every other state. Western Australia swings widely year to year, while New South Wales spiked sharply in 2019 before returning to normal. Tasmania and the ACT barely register, reflecting their cooler, wetter climates.
+    </p>
   </div>
 
   <hr class="divider">
@@ -430,14 +425,18 @@
         <div id="bubble_map"></div>
         <script>vegaEmbed("#bubble_map", "json/dot_plot_aus.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
-      <p class="chart-caption placeholder">[ Text to be added ]</p>
+      <p class="chart-caption">
+        Fire intensity in 2026 was concentrated in northern and western Australia, where dry savanna drives intense seasonal fires. A notable cluster also appears along the south-east coast, where fires pose the greatest risk to communities. Bubble size shows detection count; colour shows intensity.
+      </p>
     </div>
     <div class="col">
       <div class="chart-box">
         <div id="daily_trend"></div>
         <script>vegaEmbed("#daily_trend", "json/australia_fire_daily_trend.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
-      <p class="chart-caption placeholder">[ Text to be added ]</p>
+      <p class="chart-caption">
+        Fire activity was quiet through mid-March 2026 before escalating sharply in April. Two major peaks — 8,064 on 15 April and 8,154 on 7 May — suggest the 2026 autumn season arrived earlier and more intensely than usual. Conditions can shift from under 1,000 to over 8,000 detections within days.
+      </p>
     </div>
   </div>
 
@@ -462,7 +461,9 @@
       <div id="rainfall_multiline"></div>
       <script>vegaEmbed("#rainfall_multiline", "json/rainfall_by_state_multiline.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
     </div>
-    <p class="chart-caption placeholder">[ Text to be added ]</p>
+    <p class="chart-caption">
+      Every state hit its lowest rainfall in 2019 — South Australia fell to just 82mm, NSW to around 250mm — setting the stage for the Black Summer. The decline was nationwide and synchronised, not regional. Rainfall recovered strongly from 2020, with 2022 becoming the wettest year of the decade.
+    </p>
   </div>
 
   <!-- scatter + diverging side by side -->
@@ -472,14 +473,18 @@
         <div id="scatter"></div>
         <script>vegaEmbed("#scatter", "json/scatter_rainfall_fire.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
-      <p class="chart-caption placeholder">[ Text to be added ]</p>
+      <p class="chart-caption">
+        Lower rainfall generally means more fires. NSW shows the clearest pattern — its 2019 triangle sits far left and high up, the driest year with the most fires. The Northern Territory is the exception, burning heavily regardless of rainfall due to its natural savanna fire cycle.
+      </p>
     </div>
     <div class="col">
       <div class="chart-box">
         <div id="diverging"></div>
         <script>vegaEmbed("#diverging", "json/diverging_anomaly.json", {actions: {export: true, source: true, compiled: true, editor: true}}).catch(console.error);</script>
       </div>
-      <p class="chart-caption placeholder">[ Text to be added ]</p>
+      <p class="chart-caption">
+        In 2019, fire activity ran 37% above average while rainfall was 42% below — the starkest divergence in the dataset, and the year of the Black Summer. In 2023, fires spiked again to 60% above average even as rainfall stayed near normal, suggesting extreme heat and wind are also playing a growing role.
+      </p>
     </div>
   </div>
 
